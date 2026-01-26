@@ -14,6 +14,15 @@ e.g.
 ```python
 python optuna_hyperparameter_tuning.py --model GRAN --n_trials 200
 ```
+### dataset config
+You need to download the corresponding Neo4j data. Whether or not you download the MongoDB metadata depends on your individual needs. The text data processed by the LLM from MongoDB is already stored in the `Eval_module/data` folder.
+```python
+NEO4J_URI = "bolt://xxx" #Replace with your corresponding content.
+NEO4J_USER = "xxx"
+NEO4J_PASSWORD = "xxx"
+
+MONGO_URI = "mongodb://xxx"
+```
 
 ### (1)GraphGPT model
 **commands:**
