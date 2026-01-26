@@ -1,18 +1,18 @@
 import os
 
 
-NEO4J_URI = "bolt://localhost:7690"
-NEO4J_USER = "neo4j"
-NEO4J_PASSWORD = "lxy123456"
+NEO4J_URI = "bolt://xxx"
+NEO4J_USER = "xxx"
+NEO4J_PASSWORD = "xxx"
 
-MONGO_URI = "mongodb://localhost:27017/"
+MONGO_URI = "mongodb://xxx"
 MONGO_DB_NAME = "SLCdb"
 MONGO_COLLECTION_NAME = "papers"
 
 # Sentence-BERT model name and output dimension
 # Use all-MiniLM-L6-v2 (384 dim) for faster inference; can switch to specter2_base (768 dim) later if needed
 # SBERT_MODEL_NAME = "all-MiniLM-L6-v2"
-SBERT_MODEL_NAME = "/mnt/data/lxy/all-mpnet-base-v2"#服务器版
+SBERT_MODEL_NAME = "all-mpnet-base-v2"
 SBERT_DIM = 768
 
 
