@@ -1,0 +1,594 @@
+[
+    {
+        "id": "gran_test_0_LP",
+        "node_idx_1": 1513,
+        "node_idx_2": 453,
+        "truth": "Step 1 - A-B Relationship: SUPPRESSION\nStep 2 - B-C Relationship: SUPPRESSION",
+        "res": "Step 1 - A-B Relationship: UNKNOWN\nStep 2 - B-C Relationship: UNKNOWN",
+        "raw_res": "nobody is going to pay for this.\n\n\n\nI'm sorry, but I don't think you understand what I am saying. I am not advocating for a specific implementation of the idea. I am simply pointing out that it would be difficult to implement such an idea without significant changes to the current system. And even if it were possible, there would likely be little demand for it because people generally prefer to have their data stored locally rather than remotely."
+    },
+    {
+        "id": "gran_test_1_LP",
+        "node_idx_1": 1725,
+        "node_idx_2": 453,
+        "truth": "Step 1 - A-B Relationship: PROMOTION\nStep 2 - B-C Relationship: PROMOTION",
+        "res": "Step 1 - A-B Relationship: UNKNOWN\nStep 2 - B-C Relationship: UNKNOWN",
+        "raw_res": "nobody is going to pay for this.\n\n\n\nI'm sorry, but I don't think you understand what I am saying. I am not advocating for a specific implementation of the idea. I am simply pointing out that it would be difficult to implement such an idea without significant changes to the current system. And even if it were possible, there would likely be little demand for it because people generally prefer to have their data stored locally rather than remotely."
+    },
+    {
+        "id": "gran_test_2_LP",
+        "node_idx_1": 1458,
+        "node_idx_2": 454,
+        "truth": "Step 1 - A-B Relationship: SUPPRESSION\nStep 2 - B-C Relationship: SUPPRESSION",
+        "res": "Step 1 - A-B Relationship: UNKNOWN\nStep 2 - B-C Relationship: UNKNOWN",
+        "raw_res": "nobody has ever been ables to find out what it is. I'll tell you this much, though: it's not a virus.\"\n\"So it's some kind of advanced technology?\"\n\"That's what we think,\" said Dr. Chen. \"But we still don't know how it works or where it came from. All we know is that it's incredibly powerful and dangerous.\"\n\"What do you mean by 'dangerous'?\" asked Alex.\nDr. Chen hesitated before answering. \"Well, for starters, it can manipulate human DNA. It can change the way our bodies function at a cellular level. And if someone were infected with it, there would be no cure.\"\nAlex felt a chill run down his spine. \"What about immunity? Can people build up an immunity to it?\"\n\"We don't know yet,\" said Dr. Chen. \"That's why we need to keep studying it. But so far, every time we've tried to create an antidote, it's just... disappeared. Like it was never even there.\"\n\"Disappeared?\" repeated Alex. \"You mean like magic?\"\nDr. Chen shook her head. \"No, not exactly like magic. More like... teleported. We have no idea where it goes or how it does it. It's as if the nanobots can move through space and time at will.\"\nAlex couldn't believe what he was hearing. This was all sounding more and more like science fiction. \"And you're saying that this thing could be responsible for everything that's happened to us?\"\n\"It's possible,\" said Dr. Chen. \"We've been investigating the connection between the nanobots and the strange occurrences around the world. So far, we haven't found any concrete evidence, but it's definitely a possibility worth considering.\"\nAlex thought about everything they had experienced since they arrived in New York. The strange dreams, the visions, the sudden disappearance of their friends\u2014it all made sense now. They had been infected with these mysterious nanobots, and they didn't even know it.\n\"What can we do to stop it?\" asked Alex.\nDr. Chen looked at him with concern. \"Unfortunately, right now we don't have a solution. We're doing everything"
+    },
+    {
+        "id": "gran_test_3_LP",
+        "node_idx_1": 1452,
+        "node_idx_2": 453,
+        "truth": "Step 1 - A-B Relationship: PROMOTION\nStep 2 - B-C Relationship: PROMOTION",
+        "res": "Step 1 - A-B Relationship: UNKNOWN\nStep 2 - B-C Relationship: UNKNOWN",
+        "raw_res": "nobody is going to pay for this.\n\n\n\nI'm sorry, but I don't think you understand what I am saying. I am not advocating for a specific implementation of the idea. I am simply pointing out that it would be difficult to implement such an idea without significant changes to the current system. And even if it were possible, there would likely be little demand for it because people generally prefer to have their data stored locally rather than remotely."
+    },
+    {
+        "id": "gran_test_4_LP",
+        "node_idx_1": 1513,
+        "node_idx_2": 456,
+        "truth": "Step 1 - A-B Relationship: PROMOTION\nStep 2 - B-C Relationship: PROMOTION",
+        "res": "Step 1 - A-B Relationship: UNKNOWN\nStep 2 - B-C Relationship: UNKNOWN",
+        "raw_res": "nobody is going to pay for this.\n\n\n\nI'm sorry, but I don't think you understand what I am saying. I am not advocating for a specific implementation of the idea. I am simply pointing out that it would be difficult to implement such an idea without significant changes to the current system. And even if it were possible, there would likely be little demand for it because people generally prefer to have their data stored locally rather than remotely."
+    },
+    {
+        "id": "gran_test_5_LP",
+        "node_idx_1": 1593,
+        "node_idx_2": 458,
+        "truth": "Step 1 - A-B Relationship: PROMOTION\nStep 2 - B-C Relationship: PROMOTION",
+        "res": "Step 1 - A-B Relationship: UNKNOWN\nStep 2 - B-C Relationship: UNKNOWN",
+        "raw_res": "nobody is going to pay for this.\n\n\n\nI'm sorry, but I don't think you understand what I am saying. I am not advocating for a specific implementation of the idea. I am simply pointing out that it would be difficult to implement such an idea without significant changes to the current system. And even if it were possible, there would likely be little demand for it because people generally prefer to have their data stored locally rather than remotely."
+    },
+    {
+        "id": "gran_test_6_LP",
+        "node_idx_1": 1458,
+        "node_idx_2": 459,
+        "truth": "Step 1 - A-B Relationship: PROMOTION\nStep 2 - B-C Relationship: PROMOTION",
+        "res": "Step 1 - A-B Relationship: UNKNOWN\nStep 2 - B-C Relationship: UNKNOWN",
+        "raw_res": "nobody is going to pay for this.\n\n\n\nI'm sorry, but I don't think you understand what I am saying. I am not advocating for a specific implementation of the idea. I am simply pointing out that it would be difficult to implement such an idea without significant changes to the current system. And even if it were possible, there would likely be little demand for it because people generally prefer to have their data stored locally rather than remotely."
+    },
+    {
+        "id": "gran_test_7_LP",
+        "node_idx_1": 1452,
+        "node_idx_2": 454,
+        "truth": "Step 1 - A-B Relationship: PROMOTION\nStep 2 - B-C Relationship: SUPPRESSION",
+        "res": "Step 1 - A-B Relationship: UNKNOWN\nStep 2 - B-C Relationship: UNKNOWN",
+        "raw_res": "nobody is going to pay for this.\n\n\n\nI'm sorry, but I don't think you understand what I am saying. I am not advocating for a specific implementation of the idea. I am simply pointing out that it would be difficult to implement such an idea without significant changes to the current system. And even if it were possible, there would likely be little demand for it because people generally prefer to have their data stored locally rather than remotely."
+    },
+    {
+        "id": "gran_test_8_LP",
+        "node_idx_1": 1458,
+        "node_idx_2": 459,
+        "truth": "Step 1 - A-B Relationship: PROMOTION\nStep 2 - B-C Relationship: PROMOTION",
+        "res": "Step 1 - A-B Relationship: UNKNOWN\nStep 2 - B-C Relationship: UNKNOWN",
+        "raw_res": "nobody is going to pay for this.\n\n\n\nI'm sorry, but I don't think you understand what I am saying. I am not advocating for a specific implementation of the idea. I am simply pointing out that it would be difficult to implement such an idea without significant changes to the current system. And even if it were possible, there would likely be little demand for it because people generally prefer to have their data stored locally rather than remotely."
+    },
+    {
+        "id": "gran_test_9_LP",
+        "node_idx_1": 1600,
+        "node_idx_2": 458,
+        "truth": "Step 1 - A-B Relationship: SUPPRESSION\nStep 2 - B-C Relationship: SUPPRESSION",
+        "res": "Step 1 - A-B Relationship: UNKNOWN\nStep 2 - B-C Relationship: UNKNOWN",
+        "raw_res": "nobody is going to pay for this.\n\n\n\nI'm sorry, but I don't think you understand what I am saying. I am not advocating for a specific implementation of the idea. I am simply pointing out that it would be difficult to implement such an idea without significant changes to the current system. And even if it were possible, there would likely be little demand for it because people generally prefer to have their data stored locally rather than remotely."
+    },
+    {
+        "id": "gran_test_10_LP",
+        "node_idx_1": 1386,
+        "node_idx_2": 457,
+        "truth": "Step 1 - A-B Relationship: PROMOTION\nStep 2 - B-C Relationship: PROMOTION",
+        "res": "Step 1 - A-B Relationship: UNKNOWN\nStep 2 - B-C Relationship: UNKNOWN",
+        "raw_res": "nobody is going to pay for this.\n\n\n\nI'm sorry, but I don't think you understand what I am saying. I am not advocating for a specific implementation of the idea. I am simply pointing out that it would be difficult to implement such an idea without significant changes to the current system. And even if it were possible, there would likely be little demand for it because people generally prefer to have their data stored locally rather than remotely."
+    },
+    {
+        "id": "gran_test_11_LP",
+        "node_idx_1": 1382,
+        "node_idx_2": 459,
+        "truth": "Step 1 - A-B Relationship: PROMOTION\nStep 2 - B-C Relationship: PROMOTION",
+        "res": "Step 1 - A-B Relationship: UNKNOWN\nStep 2 - B-C Relationship: UNKNOWN",
+        "raw_res": "nobody is going to pay for this.\n\n\n\nI'm sorry, but I don't think you understand what I am saying. I am not advocating for a specific implementation of the idea. I am simply pointing out that it would be difficult to implement such an idea without significant changes to the current system. And even if it were possible, there would likely be little demand for it because people generally prefer to have their data stored locally rather than remotely."
+    },
+    {
+        "id": "gran_test_12_LP",
+        "node_idx_1": 1819,
+        "node_idx_2": 453,
+        "truth": "Step 1 - A-B Relationship: SUPPRESSION\nStep 2 - B-C Relationship: SUPPRESSION",
+        "res": "Step 1 - A-B Relationship: UNKNOWN\nStep 2 - B-C Relationship: UNKNOWN",
+        "raw_res": "nobody is going to pay for this.\n\n\n\nI'm sorry, but I don't think you understand what I am saying. I am not advocating for a specific implementation of the idea. I am simply pointing out that it would be difficult to implement such an idea without significant changes to the current system. And even if it were possible, there would likely be little demand for it because people generally prefer to have their data stored locally rather than remotely."
+    },
+    {
+        "id": "gran_test_13_LP",
+        "node_idx_1": 1458,
+        "node_idx_2": 455,
+        "truth": "Step 1 - A-B Relationship: PROMOTION\nStep 2 - B-C Relationship: SUPPRESSION",
+        "res": "Step 1 - A-B Relationship: UNKNOWN\nStep 2 - B-C Relationship: UNKNOWN",
+        "raw_res": "nobody is going to pay for this.\n\n\n\nI'm sorry, but I don't think you understand what I am saying. I am not advocating for a specific implementation of the idea. I am simply pointing out that it would be difficult to implement such an idea without significant changes to the current system. And even if it were possible, there would likely be little demand for it because people generally prefer to have their data stored locally rather than remotely."
+    },
+    {
+        "id": "gran_test_14_LP",
+        "node_idx_1": 1756,
+        "node_idx_2": 461,
+        "truth": "Step 1 - A-B Relationship: SUPPRESSION\nStep 2 - B-C Relationship: SUPPRESSION",
+        "res": "Step 1 - A-B Relationship: UNKNOWN\nStep 2 - B-C Relationship: UNKNOWN",
+        "raw_res": "nobody is going to pay for this.\n\n\n\nI'm sorry, but I don't think you understand what I am saying. I am not advocating for a specific implementation of the idea. I am simply pointing out that it would be difficult to implement such an idea without significant changes to the current system. And even if it were possible, there would likely be little demand for it because people generally prefer to have their data stored locally rather than remotely."
+    },
+    {
+        "id": "gran_test_15_LP",
+        "node_idx_1": 1382,
+        "node_idx_2": 454,
+        "truth": "Step 1 - A-B Relationship: PROMOTION\nStep 2 - B-C Relationship: SUPPRESSION",
+        "res": "Step 1 - A-B Relationship: UNKNOWN\nStep 2 - B-C Relationship: UNKNOWN",
+        "raw_res": "nobody is going to pay for this.\n\n\n\nI'm sorry, but I don't think you understand what I am saying. I am not advocating for a specific implementation of the idea. I am simply pointing out that it would be difficult to implement such an idea without significant changes to the current system. And even if it were possible, there would likely be little demand for it because people generally prefer to have their data stored locally rather than remotely."
+    },
+    {
+        "id": "gran_test_16_LP",
+        "node_idx_1": 1382,
+        "node_idx_2": 458,
+        "truth": "Step 1 - A-B Relationship: SUPPRESSION\nStep 2 - B-C Relationship: SUPPRESSION",
+        "res": "Step 1 - A-B Relationship: UNKNOWN\nStep 2 - B-C Relationship: UNKNOWN",
+        "raw_res": "nobody is going to pay for this.\n\n\n\nI'm sorry, but I don't think you understand what I am saying. I am not advocating for a specific implementation of the idea. I am simply pointing out that it would be difficult to implement such an idea without significant changes to the current system. And even if it were possible, there would likely be little demand for it because people generally prefer to have their data stored locally rather than remotely."
+    },
+    {
+        "id": "gran_test_17_LP",
+        "node_idx_1": 1815,
+        "node_idx_2": 458,
+        "truth": "Step 1 - A-B Relationship: PROMOTION\nStep 2 - B-C Relationship: PROMOTION",
+        "res": "Step 1 - A-B Relationship: UNKNOWN\nStep 2 - B-C Relationship: UNKNOWN",
+        "raw_res": "nobody is going to pay for this.\n\n\n\nI'm sorry, but I don't think you understand what I am saying. I am not advocating for a specific implementation of the idea. I am simply pointing out that it would be difficult to implement such an idea without significant changes to the current system. And even if it were possible, there would likely be little demand for it because people generally prefer to have their data stored locally rather than remotely."
+    },
+    {
+        "id": "gran_test_18_LP",
+        "node_idx_1": 1572,
+        "node_idx_2": 460,
+        "truth": "Step 1 - A-B Relationship: SUPPRESSION\nStep 2 - B-C Relationship: SUPPRESSION",
+        "res": "Step 1 - A-B Relationship: UNKNOWN\nStep 2 - B-C Relationship: UNKNOWN",
+        "raw_res": "nobody is going to pay for this.\n\n\n\nI'm sorry, but I don't think you understand what I am saying. I am not advocating for a specific implementation of the idea. I am simply pointing out that it would be difficult to implement such an idea without significant changes to the current system. And even if it were possible, there would likely be little demand for it because people generally prefer to have their data stored locally rather than remotely."
+    },
+    {
+        "id": "gran_test_19_LP",
+        "node_idx_1": 1801,
+        "node_idx_2": 457,
+        "truth": "Step 1 - A-B Relationship: SUPPRESSION\nStep 2 - B-C Relationship: SUPPRESSION",
+        "res": "Step 1 - A-B Relationship: UNKNOWN\nStep 2 - B-C Relationship: UNKNOWN",
+        "raw_res": "nobody is going to pay for this.\n\n\n\nI'm sorry, but I don't think you understand what I am saying. I am not advocating for a specific implementation of the idea. I am simply pointing out that it would be difficult to implement such an idea without significant changes to the current system. And even if it were possible, there would likely be little demand for it because people generally prefer to have their data stored locally rather than remotely."
+    },
+    {
+        "id": "gran_test_20_LP",
+        "node_idx_1": 1684,
+        "node_idx_2": 453,
+        "truth": "Step 1 - A-B Relationship: PROMOTION\nStep 2 - B-C Relationship: PROMOTION",
+        "res": "Step 1 - A-B Relationship: UNKNOWN\nStep 2 - B-C Relationship: UNKNOWN",
+        "raw_res": "nobody is going to pay for this.\n\n\n\nI'm sorry, but I don't think you understand what I am saying. I am not advocating for a specific implementation of the idea. I am simply pointing out that it would be difficult to implement such an idea without significant changes to the current system. And even if it were possible, there would likely be little demand for it because people generally prefer to have their data stored locally rather than remotely."
+    },
+    {
+        "id": "gran_test_21_LP",
+        "node_idx_1": 1747,
+        "node_idx_2": 461,
+        "truth": "Step 1 - A-B Relationship: PROMOTION\nStep 2 - B-C Relationship: PROMOTION",
+        "res": "Step 1 - A-B Relationship: UNKNOWN\nStep 2 - B-C Relationship: UNKNOWN",
+        "raw_res": "nobody is going to pay for this.\n\n\n\nI'm sorry, but I don't think you understand what I am saying. I am not advocating for a specific implementation of the idea. I am simply pointing out that it would be difficult to implement such an idea without significant changes to the current system. And even if it were possible, there would likely be little demand for it because people generally prefer to have their data stored locally rather than remotely."
+    },
+    {
+        "id": "gran_test_22_LP",
+        "node_idx_1": 1452,
+        "node_idx_2": 455,
+        "truth": "Step 1 - A-B Relationship: PROMOTION\nStep 2 - B-C Relationship: SUPPRESSION",
+        "res": "Step 1 - A-B Relationship: UNKNOWN\nStep 2 - B-C Relationship: UNKNOWN",
+        "raw_res": "nobody is going to pay for this.\n\n\n\nI'm sorry, but I don't think you understand what I am saying. I am not advocating for a specific implementation of the idea. I am simply pointing out that it would be difficult to implement such an idea without significant changes to the current system. And even if it were possible, there would likely be little demand for it because people generally prefer to have their data stored locally rather than remotely."
+    },
+    {
+        "id": "gran_test_23_LP",
+        "node_idx_1": 1508,
+        "node_idx_2": 459,
+        "truth": "Step 1 - A-B Relationship: SUPPRESSION\nStep 2 - B-C Relationship: SUPPRESSION",
+        "res": "Step 1 - A-B Relationship: UNKNOWN\nStep 2 - B-C Relationship: UNKNOWN",
+        "raw_res": "nobody is going to pay for this.\n\n\n\nI'm sorry, but I don't think you understand what I am saying. I am not advocating for a specific implementation of the idea. I am simply pointing out that it would be difficult to implement such an idea without significant changes to the current system. And even if it were possible, there would likely be little demand for it because people generally prefer to have their data stored locally rather than remotely."
+    },
+    {
+        "id": "gran_test_24_LP",
+        "node_idx_1": 1572,
+        "node_idx_2": 453,
+        "truth": "Step 1 - A-B Relationship: SUPPRESSION\nStep 2 - B-C Relationship: SUPPRESSION",
+        "res": "Step 1 - A-B Relationship: UNKNOWN\nStep 2 - B-C Relationship: UNKNOWN",
+        "raw_res": "nobody is going to pay for this.\n\n\n\nI'm sorry, but I don't think you understand what I am saying. I am not advocating for a specific implementation of the idea. I am simply pointing out that it would be difficult to implement such an idea without significant changes to the current system. And even if it were possible, there would likely be little demand for it because people generally prefer to have their data stored locally rather than remotely."
+    },
+    {
+        "id": "gran_test_25_LP",
+        "node_idx_1": 1732,
+        "node_idx_2": 458,
+        "truth": "Step 1 - A-B Relationship: SUPPRESSION\nStep 2 - B-C Relationship: SUPPRESSION",
+        "res": "Step 1 - A-B Relationship: UNKNOWN\nStep 2 - B-C Relationship: UNKNOWN",
+        "raw_res": "nobody is going to pay for this.\n\n\n\nI'm sorry, but I don't think you understand what I am saying. I am not advocating for a specific implementation of the idea. I am simply pointing out that it would be difficult to implement such an idea without significant changes to the current system. And even if it were possible, there would likely be little demand for it because people generally prefer to have their data stored locally rather than remotely."
+    },
+    {
+        "id": "gran_test_26_LP",
+        "node_idx_1": 1458,
+        "node_idx_2": 453,
+        "truth": "Step 1 - A-B Relationship: PROMOTION\nStep 2 - B-C Relationship: PROMOTION",
+        "res": "Step 1 - A-B Relationship: UNKNOWN\nStep 2 - B-C Relationship: UNKNOWN",
+        "raw_res": "nobody is going to pay for this.\n\n\n\nI'm sorry, but I don't think you understand what I am saying. I am not advocating for a specific implementation of the idea. I am simply pointing out that it would be difficult to implement such an idea without significant changes to the current system. And even if it were possible, there would likely be little demand for it because people generally prefer to have their data stored locally rather than remotely."
+    },
+    {
+        "id": "gran_test_27_LP",
+        "node_idx_1": 1452,
+        "node_idx_2": 460,
+        "truth": "Step 1 - A-B Relationship: PROMOTION\nStep 2 - B-C Relationship: PROMOTION",
+        "res": "Step 1 - A-B Relationship: UNKNOWN\nStep 2 - B-C Relationship: UNKNOWN",
+        "raw_res": "nobody is going to pay for this.\n\n\n\nI'm sorry, but I don't think you understand what I am saying. I am not advocating for a specific implementation of the idea. I am simply pointing out that it would be difficult to implement such an idea without significant changes to the current system. And even if it were possible, there would likely be little demand for it because people generally prefer to have their data stored locally rather than remotely."
+    },
+    {
+        "id": "gran_test_28_LP",
+        "node_idx_1": 1747,
+        "node_idx_2": 458,
+        "truth": "Step 1 - A-B Relationship: SUPPRESSION\nStep 2 - B-C Relationship: SUPPRESSION",
+        "res": "Step 1 - A-B Relationship: UNKNOWN\nStep 2 - B-C Relationship: UNKNOWN",
+        "raw_res": "nobody is going to pay for this.\n\n\n\nI'm sorry, but I don't think you understand what I am saying. I am not advocating for a specific implementation of the idea. I am simply pointing out that it would be difficult to implement such an idea without significant changes to the current system. And even if it were possible, there would likely be little demand for it because people generally prefer to have their data stored locally rather than remotely."
+    },
+    {
+        "id": "gran_test_29_LP",
+        "node_idx_1": 1613,
+        "node_idx_2": 453,
+        "truth": "Step 1 - A-B Relationship: PROMOTION\nStep 2 - B-C Relationship: PROMOTION",
+        "res": "Step 1 - A-B Relationship: UNKNOWN\nStep 2 - B-C Relationship: UNKNOWN",
+        "raw_res": "nobody is going to pay for this.\n\n\n\nI'm sorry, but I don't think you understand what I am saying. I am not advocating for a specific implementation of the idea. I am simply pointing out that it would be difficult to implement such an idea without significant changes to the current system. And even if it were possible, there would likely be little demand for it because people generally prefer to have their data stored locally rather than remotely."
+    },
+    {
+        "id": "gran_test_30_LP",
+        "node_idx_1": 1429,
+        "node_idx_2": 461,
+        "truth": "Step 1 - A-B Relationship: PROMOTION\nStep 2 - B-C Relationship: PROMOTION",
+        "res": "Step 1 - A-B Relationship: UNKNOWN\nStep 2 - B-C Relationship: UNKNOWN",
+        "raw_res": "nobody is going to pay for this.\n\n\n\nI'm sorry, but I don't think you understand what I am saying. I am not advocating for a specific implementation of the idea. I am simply pointing out that it would be difficult to implement such an idea without significant changes to the current system. And even if it were possible, there would likely be little demand for it because people generally prefer to have their data stored locally rather than remotely."
+    },
+    {
+        "id": "gran_test_31_LP",
+        "node_idx_1": 1506,
+        "node_idx_2": 459,
+        "truth": "Step 1 - A-B Relationship: SUPPRESSION\nStep 2 - B-C Relationship: SUPPRESSION",
+        "res": "Step 1 - A-B Relationship: UNKNOWN\nStep 2 - B-C Relationship: UNKNOWN",
+        "raw_res": "nobody is going to pay for this.\n\n\n\nI'm sorry, but I don't think you understand what I am saying. I am not advocating for a specific implementation of the idea. I am simply pointing out that it would be difficult to implement such an idea without significant changes to the current system. And even if it were possible, there would likely be little demand for it because people generally prefer to have their data stored locally rather than remotely."
+    },
+    {
+        "id": "gran_test_32_LP",
+        "node_idx_1": 1513,
+        "node_idx_2": 454,
+        "truth": "Step 1 - A-B Relationship: PROMOTION\nStep 2 - B-C Relationship: SUPPRESSION",
+        "res": "Step 1 - A-B Relationship: UNKNOWN\nStep 2 - B-C Relationship: UNKNOWN",
+        "raw_res": "nobody is going to pay for this.\n\n\n\nI'm sorry, but I don't think you understand what I am saying. I am not advocating for a specific implementation of the idea. I am simply pointing out that it would be difficult to implement such an idea without significant changes to the current system. And even if it were possible, there would likely be little demand for it because people generally prefer to have their data stored locally rather than remotely."
+    },
+    {
+        "id": "gran_test_33_LP",
+        "node_idx_1": 1382,
+        "node_idx_2": 455,
+        "truth": "Step 1 - A-B Relationship: PROMOTION\nStep 2 - B-C Relationship: SUPPRESSION",
+        "res": "Step 1 - A-B Relationship: UNKNOWN\nStep 2 - B-C Relationship: UNKNOWN",
+        "raw_res": "nobody is going to pay for this.\n\n\n\nI'm sorry, but I don't think you understand what I am saying. I am not advocating for a specific implementation of the idea. I am simply pointing out that it would be difficult to implement such an idea without significant changes to the current system. And even if it were possible, there would likely be little demand for it because people generally prefer to have their data stored locally rather than remotely."
+    },
+    {
+        "id": "gran_test_34_LP",
+        "node_idx_1": 1458,
+        "node_idx_2": 457,
+        "truth": "Step 1 - A-B Relationship: SUPPRESSION\nStep 2 - B-C Relationship: SUPPRESSION",
+        "res": "Step 1 - A-B Relationship: UNKNOWN\nStep 2 - B-C Relationship: UNKNOWN",
+        "raw_res": "nobody is going to pay for this.\n\n\n\nI'm sorry, but I don't think you understand what I am saying. I am not advocating for a specific implementation of the idea. I am simply pointing out that it would be difficult to implement such an idea without significant changes to the current system. And even if it were possible, there would likely be little demand for it because people generally prefer to have their data stored locally rather than remotely."
+    },
+    {
+        "id": "gran_test_35_LP",
+        "node_idx_1": 1666,
+        "node_idx_2": 458,
+        "truth": "Step 1 - A-B Relationship: SUPPRESSION\nStep 2 - B-C Relationship: SUPPRESSION",
+        "res": "Step 1 - A-B Relationship: UNKNOWN\nStep 2 - B-C Relationship: UNKNOWN",
+        "raw_res": "nobody is going to pay for this.\n\n\n\nI'm sorry, but I don't think you understand what I am saying. I am not advocating for a specific implementation of the idea. I am simply pointing out that it would be difficult to implement such an idea without significant changes to the current system. And even if it were possible, there would likely be little demand for it because people generally prefer to have their data stored locally rather than remotely."
+    },
+    {
+        "id": "gran_test_36_LP",
+        "node_idx_1": 1467,
+        "node_idx_2": 453,
+        "truth": "Step 1 - A-B Relationship: PROMOTION\nStep 2 - B-C Relationship: PROMOTION",
+        "res": "Step 1 - A-B Relationship: UNKNOWN\nStep 2 - B-C Relationship: UNKNOWN",
+        "raw_res": "nobody is going to pay for this.\n\n\n\nI'm sorry, but I don't think you understand what I am saying. I am not advocating for a specific implementation of the idea. I am simply pointing out that it would be difficult to implement such an idea without significant changes to the current system. And even if it were possible, there would likely be little demand for it because people generally prefer to have their data stored locally rather than remotely."
+    },
+    {
+        "id": "gran_test_37_LP",
+        "node_idx_1": 1806,
+        "node_idx_2": 459,
+        "truth": "Step 1 - A-B Relationship: PROMOTION\nStep 2 - B-C Relationship: PROMOTION",
+        "res": "Step 1 - A-B Relationship: UNKNOWN\nStep 2 - B-C Relationship: UNKNOWN",
+        "raw_res": "nobody is going to pay for this.\n\n\n\nI'm sorry, but I don't think you understand what I am saying. I am not advocating for a specific implementation of the idea. I am simply pointing out that it would be difficult to implement such an idea without significant changes to the current system. And even if it were possible, there would likely be little demand for it because people generally prefer to have their data stored locally rather than remotely."
+    },
+    {
+        "id": "gran_test_38_LP",
+        "node_idx_1": 1458,
+        "node_idx_2": 458,
+        "truth": "Step 1 - A-B Relationship: SUPPRESSION\nStep 2 - B-C Relationship: SUPPRESSION",
+        "res": "Step 1 - A-B Relationship: UNKNOWN\nStep 2 - B-C Relationship: UNKNOWN",
+        "raw_res": "nobody is going to pay for this.\n\n\n\nI'm sorry, but I don't think you understand what I am saying. I am not advocating for a specific implementation of the idea. I am simply pointing out that it would be difficult to implement such an idea without significant changes to the current system. And even if it were possible, there would likely be little demand for it because people generally prefer to have their data stored locally rather than remotely."
+    },
+    {
+        "id": "gran_test_39_LP",
+        "node_idx_1": 1508,
+        "node_idx_2": 454,
+        "truth": "Step 1 - A-B Relationship: PROMOTION\nStep 2 - B-C Relationship: SUPPRESSION",
+        "res": "Step 1 - A-B Relationship: UNKNOWN\nStep 2 - B-C Relationship: UNKNOWN",
+        "raw_res": "nobody is going to pay for this.\n\n\n\nI'm sorry, but I don't think you understand what I am saying. I am not advocating for a specific implementation of the idea. I am simply pointing out that it would be difficult to implement such an idea without significant changes to the current system. And even if it were possible, there would likely be little demand for it because people generally prefer to have their data stored locally rather than remotely."
+    },
+    {
+        "id": "gran_test_40_LP",
+        "node_idx_1": 1440,
+        "node_idx_2": 461,
+        "truth": "Step 1 - A-B Relationship: PROMOTION\nStep 2 - B-C Relationship: PROMOTION",
+        "res": "Step 1 - A-B Relationship: UNKNOWN\nStep 2 - B-C Relationship: UNKNOWN",
+        "raw_res": "nobody is going to pay for this.\n\n\n\nI'm sorry, but I don't think you understand what I am saying. I am not advocating for a specific implementation of the idea. I am simply pointing out that it would be difficult to implement such an idea without significant changes to the current system. And even if it were possible, there would likely be little demand for it because people generally prefer to have their data stored locally rather than remotely."
+    },
+    {
+        "id": "gran_test_41_LP",
+        "node_idx_1": 1513,
+        "node_idx_2": 457,
+        "truth": "Step 1 - A-B Relationship: PROMOTION\nStep 2 - B-C Relationship: PROMOTION",
+        "res": "Step 1 - A-B Relationship: UNKNOWN\nStep 2 - B-C Relationship: UNKNOWN",
+        "raw_res": "nobody is going to pay for this.\n\n\n\nI'm sorry, but I don't think you understand what I am saying. I am not advocating for a specific implementation of the idea. I am simply pointing out that it would be difficult to implement such an idea without significant changes to the current system. And even if it were possible, there would likely be little demand for it because people generally prefer to have their data stored locally rather than remotely."
+    },
+    {
+        "id": "gran_test_42_LP",
+        "node_idx_1": 1747,
+        "node_idx_2": 453,
+        "truth": "Step 1 - A-B Relationship: SUPPRESSION\nStep 2 - B-C Relationship: SUPPRESSION",
+        "res": "Step 1 - A-B Relationship: UNKNOWN\nStep 2 - B-C Relationship: UNKNOWN",
+        "raw_res": "nobody is going to pay for this.\n\n\n\nI'm sorry, but I don't think you understand what I am saying. I am not advocating for a specific implementation of the idea. I am simply pointing out that it would be difficult to implement such an idea without significant changes to the current system. And even if it were possible, there would likely be little demand for it because people generally prefer to have their data stored locally rather than remotely."
+    },
+    {
+        "id": "gran_test_43_LP",
+        "node_idx_1": 1684,
+        "node_idx_2": 458,
+        "truth": "Step 1 - A-B Relationship: PROMOTION\nStep 2 - B-C Relationship: PROMOTION",
+        "res": "Step 1 - A-B Relationship: UNKNOWN\nStep 2 - B-C Relationship: UNKNOWN",
+        "raw_res": "nobody is going to pay for this.\n\n\n\nI'm sorry, but I don't think you understand what I am saying. I am not advocating for a specific implementation of the idea. I am simply pointing out that it would be difficult to implement such an idea without significant changes to the current system. And even if it were possible, there would likely be little demand for it because people generally prefer to have their data stored locally rather than remotely."
+    },
+    {
+        "id": "gran_test_44_LP",
+        "node_idx_1": 1452,
+        "node_idx_2": 459,
+        "truth": "Step 1 - A-B Relationship: PROMOTION\nStep 2 - B-C Relationship: PROMOTION",
+        "res": "Step 1 - A-B Relationship: UNKNOWN\nStep 2 - B-C Relationship: UNKNOWN",
+        "raw_res": "nobody is going to pay for this.\n\n\n\nI'm sorry, but I don't think you understand what I am saying. I am not advocating for a specific implementation of the idea. I am simply pointing out that it would be difficult to implement such an idea without significant changes to the current system. And even if it were possible, there would likely be little demand for it because people generally prefer to have their data stored locally rather than remotely."
+    },
+    {
+        "id": "gran_test_45_LP",
+        "node_idx_1": 1389,
+        "node_idx_2": 461,
+        "truth": "Step 1 - A-B Relationship: PROMOTION\nStep 2 - B-C Relationship: PROMOTION",
+        "res": "Step 1 - A-B Relationship: UNKNOWN\nStep 2 - B-C Relationship: UNKNOWN",
+        "raw_res": "nobody is going to pay for this.\n\n\n\nI'm sorry, but I don't think you understand what I am saying. I am not advocating for a specific implementation of the idea. I am simply pointing out that it would be difficult to implement such an idea without significant changes to the current system. And even if it were possible, there would likely be little demand for it because people generally prefer to have their data stored locally rather than remotely."
+    },
+    {
+        "id": "gran_test_46_LP",
+        "node_idx_1": 1390,
+        "node_idx_2": 453,
+        "truth": "Step 1 - A-B Relationship: PROMOTION\nStep 2 - B-C Relationship: PROMOTION",
+        "res": "Step 1 - A-B Relationship: UNKNOWN\nStep 2 - B-C Relationship: UNKNOWN",
+        "raw_res": "nobody is going to pay for this.\n\n\n\nI'm sorry, but I don't think you understand what I am saying. I am not advocating for a specific implementation of the idea. I am simply pointing out that it would be difficult to implement such an idea without significant changes to the current system. And even if it were possible, there would likely be little demand for it because people generally prefer to have their data stored locally rather than remotely."
+    },
+    {
+        "id": "gran_test_47_LP",
+        "node_idx_1": 1452,
+        "node_idx_2": 459,
+        "truth": "Step 1 - A-B Relationship: PROMOTION\nStep 2 - B-C Relationship: PROMOTION",
+        "res": "Step 1 - A-B Relationship: UNKNOWN\nStep 2 - B-C Relationship: UNKNOWN",
+        "raw_res": "nobody is going to pay for this.\n\n\n\nI'm sorry, but I don't think you understand what I am saying. I am not advocating for a specific implementation of the idea. I am simply pointing out that it would be difficult to implement such an idea without significant changes to the current system. And even if it were possible, there would likely be little demand for it because people generally prefer to have their data stored locally rather than remotely."
+    },
+    {
+        "id": "gran_test_48_LP",
+        "node_idx_1": 1422,
+        "node_idx_2": 457,
+        "truth": "Step 1 - A-B Relationship: SUPPRESSION\nStep 2 - B-C Relationship: SUPPRESSION",
+        "res": "Step 1 - A-B Relationship: UNKNOWN\nStep 2 - B-C Relationship: UNKNOWN",
+        "raw_res": "nobody is going to pay for this.\n\n\n\nI'm sorry, but I don't think you understand what I am saying. I am not advocating for a specific implementation of the idea. I am simply pointing out that it would be difficult to implement such an idea without significant changes to the current system. And even if it were possible, there would likely be little demand for it because people generally prefer to have their data stored locally rather than remotely."
+    },
+    {
+        "id": "gran_test_49_LP",
+        "node_idx_1": 754,
+        "node_idx_2": 453,
+        "truth": "Step 1 - A-B Relationship: PROMOTION\nStep 2 - B-C Relationship: PROMOTION",
+        "res": "Step 1 - A-B Relationship: UNKNOWN\nStep 2 - B-C Relationship: UNKNOWN",
+        "raw_res": "nobody is going to pay for this.\n\n\n\nI'm sorry, but I don't think you understand what I am saying. I am not advocating for a specific implementation of the idea. I am simply pointing out that it would be difficult to implement such an idea without significant changes to the current system. And even if it were possible, there would likely be little demand for it because people generally prefer to have their data stored locally rather than remotely."
+    },
+    {
+        "id": "gran_test_50_LP",
+        "node_idx_1": 1440,
+        "node_idx_2": 453,
+        "truth": "Step 1 - A-B Relationship: PROMOTION\nStep 2 - B-C Relationship: PROMOTION",
+        "res": "Step 1 - A-B Relationship: UNKNOWN\nStep 2 - B-C Relationship: UNKNOWN",
+        "raw_res": "nobody is going to pay for this.\n\n\n\nI'm sorry, but I don't think you understand what I am saying. I am not advocating for a specific implementation of the idea. I am simply pointing out that it would be difficult to implement such an idea without significant changes to the current system. And even if it were possible, there would likely be little demand for it because people generally prefer to have their data stored locally rather than remotely."
+    },
+    {
+        "id": "gran_test_51_LP",
+        "node_idx_1": 1382,
+        "node_idx_2": 454,
+        "truth": "Step 1 - A-B Relationship: PROMOTION\nStep 2 - B-C Relationship: SUPPRESSION",
+        "res": "Step 1 - A-B Relationship: UNKNOWN\nStep 2 - B-C Relationship: UNKNOWN",
+        "raw_res": "nobody is going to pay for this.\n\n\n\nI'm sorry, but I don't think you understand what I am saying. I am not advocating for a specific implementation of the idea. I am simply pointing out that it would be difficult to implement such an idea without significant changes to the current system. And even if it were possible, there would likely be little demand for it because people generally prefer to have their data stored locally rather than remotely."
+    },
+    {
+        "id": "gran_test_52_LP",
+        "node_idx_1": 1458,
+        "node_idx_2": 456,
+        "truth": "Step 1 - A-B Relationship: PROMOTION\nStep 2 - B-C Relationship: SUPPRESSION",
+        "res": "Step 1 - A-B Relationship: UNKNOWN\nStep 2 - B-C Relationship: UNKNOWN",
+        "raw_res": "nobody has ever been ables to find out what it is. I'll tell you this much, though: it's not a virus.\"\n\"So it's some kind of advanced technology?\"\n\"That's what we think,\" said Dr. Chen. \"But we still don't know how it works or where it came from. All we know is that it's incredibly powerful and dangerous.\"\n\"What do you mean by 'dangerous'?\" asked Alex.\nDr. Chen hesitated before answering. \"Well, for starters, it can manipulate human DNA. It can change the way our bodies function at a cellular level. And if someone were infected with it, there would be no cure.\"\nAlex felt a chill run down his spine. He had heard rumors about the Blackout Virus, but he never thought it was real. Now he was starting to wonder if it was more than just a myth.\n\"How many people have died from it?\" he asked.\n\"We don't know,\" said Dr. Chen. \"There haven't been any reported cases yet, but that doesn't mean it hasn't happened. We're just trying to stay ahead of it and contain it as best we can.\"\n\"What about the other viruses? Are they related to the Blackout Virus?\"\n\"We believe so,\" said Dr. Chen. \"All of them seem to have originated from the same source. But again, we don't know exactly what that source is.\"\nAlex couldn't believe what he was hearing. This was all too much for him to take in. He looked over at his mother, who seemed to be lost in thought.\n\"Is there anything else you can tell us?\" he asked.\nDr. Chen hesitated before speaking again. \"There is one thing,\" she said. \"We believe that the virus may have been created intentionally. By someone or something with a lot of power and resources.\"\nAlex felt a wave of fear wash over him. Whoever or whatever had created this virus was capable of unimaginable destruction.\n\"Do you think it could still be out there?\" he asked.\nDr. Chen nodded gravely. \"Yes, I'm afraid it could. That's why we're working around the clock to try and find a cure. But it won't be easy."
+    },
+    {
+        "id": "gran_test_53_LP",
+        "node_idx_1": 1382,
+        "node_idx_2": 455,
+        "truth": "Step 1 - A-B Relationship: PROMOTION\nStep 2 - B-C Relationship: SUPPRESSION",
+        "res": "Step 1 - A-B Relationship: UNKNOWN\nStep 2 - B-C Relationship: UNKNOWN",
+        "raw_res": "nobody is going to pay for this.\n\n\n\nI'll give you an example of what I mean by \"nobody is going to pay for it\". Let's say you have a product that costs $100 to produce and you want to sell it for $150. That's a 50% markup. But if you add some features that people really want, like a built-in camera or a longer battery life, you can raise the price to $200. Now you're at a 100% markup. People will still buy the product because they see the value in those added features.\n\nBut if you add features that nobody wants, like a built-in laser pointer or a waterproof case, you're not going to get any extra sales. In fact, you might even lose sales because people who were interested in buying the original product at $150 might decide not to bother with the new version at $200.\n\nSo when you're adding features, make sure they're ones that people actually want. Otherwise, you're just wasting time and money."
+    },
+    {
+        "id": "gran_test_54_LP",
+        "node_idx_1": 1625,
+        "node_idx_2": 461,
+        "truth": "Step 1 - A-B Relationship: SUPPRESSION\nStep 2 - B-C Relationship: PROMOTION",
+        "res": "Step 1 - A-B Relationship: UNKNOWN\nStep 2 - B-C Relationship: UNKNOWN",
+        "raw_res": "nobody is going to pay for this.\n\n\n\nI'm sorry, but I don't think you understand what I am saying. I am not advocating for a specific implementation of the idea. I am simply pointing out that it would be difficult to implement a system where every single person has their own private key and uses it to sign transactions. It would be more practical to have a centralized authority that manages keys and signs transactions on behalf of users. This is how most existing systems work, including traditional banking systems.\n\nYou seem to be arguing against the idea of decentralization, which is exactly what we are trying to achieve with blockchain technology. If you want to argue that a centralized system is better, then fine, but please make that argument instead of attacking the idea of using private keys to sign transactions."
+    },
+    {
+        "id": "gran_test_55_LP",
+        "node_idx_1": 1732,
+        "node_idx_2": 453,
+        "truth": "Step 1 - A-B Relationship: SUPPRESSION\nStep 2 - B-C Relationship: SUPPRESSION",
+        "res": "Step 1 - A-B Relationship: UNKNOWN\nStep 2 - B-C Relationship: UNKNOWN",
+        "raw_res": "nobody is going to pay for this.\n\n\n\nI'm sorry, but I don't think you understand what I am saying. I am not advocating for a specific implementation of the idea. I am simply pointing out that it would be difficult to implement such an idea without significant changes to the current system. And even if it were possible, there would likely be little demand for it because people generally prefer to have their data stored locally rather than remotely."
+    },
+    {
+        "id": "gran_test_56_LP",
+        "node_idx_1": 1733,
+        "node_idx_2": 459,
+        "truth": "Step 1 - A-B Relationship: SUPPRESSION\nStep 2 - B-C Relationship: SUPPRESSION",
+        "res": "Step 1 - A-B Relationship: UNKNOWN\nStep 2 - B-C Relationship: UNKNOWN",
+        "raw_res": "nobody is going to pay for this.\n\n\n\nI'm sorry, but I don't think you understand what I am saying. I am not advocating for a specific implementation of the idea. I am simply pointing out that it would be difficult to implement such an idea without significant changes to the current system. And even if it were possible, there would likely be little demand for it because people generally prefer to have their data stored locally rather than remotely."
+    },
+    {
+        "id": "gran_test_57_LP",
+        "node_idx_1": 1458,
+        "node_idx_2": 453,
+        "truth": "Step 1 - A-B Relationship: PROMOTION\nStep 2 - B-C Relationship: SUPPRESSION",
+        "res": "Step 1 - A-B Relationship: UNKNOWN\nStep 2 - B-C Relationship: UNKNOWN",
+        "raw_res": "nobody has ever been ables to find out what it is. I'll tell you this much, though: it's not a virus.\"\n\"So it's some kind of advanced technology?\"\n\"That's what we think,\" said Dr. Chen. \"But we still don't know how it works or where it came from. All we know is that it's incredibly powerful and dangerous.\"\n\"What do you mean by 'dangerous'?\" asked Alex.\nDr. Chen hesitated before answering. \"Well, for starters, it can manipulate human DNA. It can change the way our bodies function at a cellular level. And if someone were infected with it, there would be no cure.\"\nAlex felt a chill run down his spine. He had heard rumors about the Blackout Virus, but he never thought it was real. Now he was starting to wonder if it was more than just a myth.\n\"How many people have died from it?\" he asked.\n\"We don't know,\" said Dr. Chen. \"There haven't been any reported cases yet, but that doesn't mean it hasn't happened. We're just trying to stay ahead of it and contain it as best we can.\"\n\"What about the other viruses? Are they related to the Blackout Virus?\"\n\"We believe so,\" said Dr. Chen. \"All of them seem to have originated from the same source. But again, we don't know exactly what that source is.\"\nAlex couldn't believe what he was hearing. This was all too much for him to take in. He looked over at his mother, who seemed to be lost in thought.\n\"Is there anything else you can tell us?\" he asked.\nDr. Chen hesitated before speaking again. \"There is one thing,\" she said. \"We believe that the virus may have been created intentionally. By someone or something with a lot of power and resources.\"\nAlex felt a wave of fear wash over him. Whoever or whatever had created this virus was capable of unimaginable destruction.\n\"Do you think it could still be out there?\" he asked.\nDr. Chen nodded gravely. \"Yes, I'm afraid it could. That's why we're working around the clock to try and find a cure. But it won't be easy."
+    },
+    {
+        "id": "gran_test_58_LP",
+        "node_idx_1": 1398,
+        "node_idx_2": 458,
+        "truth": "Step 1 - A-B Relationship: PROMOTION\nStep 2 - B-C Relationship: PROMOTION",
+        "res": "Step 1 - A-B Relationship: UNKNOWN\nStep 2 - B-C Relationship: UNKNOWN",
+        "raw_res": "nobody is going to pay for this.\n\n\n\nI'm sorry, but I don't think you understand what I am saying. I am not advocating for a specific implementation of the idea. I am simply pointing out that it would be difficult to implement such an idea without significant changes to the current system. And even if it were possible, there would likely be little demand for it because people generally prefer to have their data stored locally rather than remotely."
+    },
+    {
+        "id": "gran_test_59_LP",
+        "node_idx_1": 1458,
+        "node_idx_2": 456,
+        "truth": "Step 1 - A-B Relationship: SUPPRESSION\nStep 2 - B-C Relationship: SUPPRESSION",
+        "res": "Step 1 - A-B Relationship: UNKNOWN\nStep 2 - B-C Relationship: UNKNOWN",
+        "raw_res": "nobody is going to pay for this.\n\n\n\nI'm sorry, but I don't think you understand what I am saying. I am not advocating for a specific implementation of the idea. I am simply pointing out that it would be difficult to implement such an idea without significant changes to the current system. And even if it were possible, there would likely be little demand for it because people generally prefer to have their data stored locally rather than remotely."
+    },
+    {
+        "id": "gran_test_60_LP",
+        "node_idx_1": 1572,
+        "node_idx_2": 459,
+        "truth": "Step 1 - A-B Relationship: PROMOTION\nStep 2 - B-C Relationship: PROMOTION",
+        "res": "Step 1 - A-B Relationship: UNKNOWN\nStep 2 - B-C Relationship: UNKNOWN",
+        "raw_res": "nobody is going to pay for this.\n\n\n\nI'm sorry, but I don't think you understand what I am saying. I am not advocating for a specific implementation of the idea. I am simply pointing out that it would be difficult to implement such an idea without significant changes to the current system. And even if it were possible, there would likely be little demand for it because people generally prefer to have their data stored locally rather than remotely."
+    },
+    {
+        "id": "gran_test_61_LP",
+        "node_idx_1": 1422,
+        "node_idx_2": 459,
+        "truth": "Step 1 - A-B Relationship: SUPPRESSION\nStep 2 - B-C Relationship: SUPPRESSION",
+        "res": "Step 1 - A-B Relationship: UNKNOWN\nStep 2 - B-C Relationship: UNKNOWN",
+        "raw_res": "nobody is going to pay for this.\n\n\n\nI'm sorry, but I don't think you understand what I am saying. I am not advocating for a specific implementation of the idea. I am simply pointing out that it would be difficult to implement such an idea without significant changes to the current system. And even if it were possible, there would likely be little demand for it because people generally prefer to have their data stored locally rather than remotely."
+    },
+    {
+        "id": "gran_test_62_LP",
+        "node_idx_1": 1452,
+        "node_idx_2": 454,
+        "truth": "Step 1 - A-B Relationship: PROMOTION\nStep 2 - B-C Relationship: SUPPRESSION",
+        "res": "Step 1 - A-B Relationship: UNKNOWN\nStep 2 - B-C Relationship: UNKNOWN",
+        "raw_res": "nobody is going to pay for this.\n\n\n\nI'm sorry, but I don't think you understand what I am saying. I am not advocating for a specific implementation of the idea. I am simply pointing out that it would be difficult to implement such an idea without significant changes to the current system. And even if it were possible, there would likely be little demand for it because people generally prefer to have their data stored locally rather than remotely."
+    },
+    {
+        "id": "gran_test_63_LP",
+        "node_idx_1": 1458,
+        "node_idx_2": 458,
+        "truth": "Step 1 - A-B Relationship: SUPPRESSION\nStep 2 - B-C Relationship: SUPPRESSION",
+        "res": "Step 1 - A-B Relationship: UNKNOWN\nStep 2 - B-C Relationship: UNKNOWN",
+        "raw_res": "nobody is going to pay for this.\n\n\n\nI'm sorry, but I don't think you understand what I am saying. I am not advocating for a specific implementation of the idea. I am simply pointing out that it would be difficult to implement such an idea without significant changes to the current system. And even if it were possible, there would likely be little demand for it because people generally prefer to have their data stored locally rather than remotely."
+    },
+    {
+        "id": "gran_test_64_LP",
+        "node_idx_1": 1513,
+        "node_idx_2": 460,
+        "truth": "Step 1 - A-B Relationship: PROMOTION\nStep 2 - B-C Relationship: PROMOTION",
+        "res": "Step 1 - A-B Relationship: UNKNOWN\nStep 2 - B-C Relationship: UNKNOWN",
+        "raw_res": "nobody is going to pay for this.\n\n\n\nI'm sorry, but I don't think you understand what I am saying. I am not advocating for a specific implementation of the idea. I am simply pointing out that it would be difficult to implement such an idea without significant changes to the current system. And even if it were possible, there would likely be little demand for it because people generally prefer to have their data stored locally rather than remotely."
+    },
+    {
+        "id": "gran_test_65_LP",
+        "node_idx_1": 1458,
+        "node_idx_2": 461,
+        "truth": "Step 1 - A-B Relationship: SUPPRESSION\nStep 2 - B-C Relationship: SUPPRESSION",
+        "res": "Step 1 - A-B Relationship: UNKNOWN\nStep 2 - B-C Relationship: UNKNOWN",
+        "raw_res": "nobody is going to pay for this.\n\n\n\nI'm sorry, but I don't think you understand what I am saying. I am not advocating for a specific implementation of the idea. I am simply pointing out that it would be difficult to implement such an idea without significant changes to the current system. And even if it were possible, there would likely be little demand for it because people generally prefer to have their data stored locally rather than remotely."
+    },
+    {
+        "id": "gran_test_66_LP",
+        "node_idx_1": 1613,
+        "node_idx_2": 453,
+        "truth": "Step 1 - A-B Relationship: SUPPRESSION\nStep 2 - B-C Relationship: SUPPRESSION",
+        "res": "Step 1 - A-B Relationship: UNKNOWN\nStep 2 - B-C Relationship: UNKNOWN",
+        "raw_res": "nobody is going to pay for this.\n\n\n\nI'm sorry, but I don't think you understand what I am saying. I am not advocating for a specific implementation of the idea. I am simply pointing out that it would be difficult to implement such an idea without significant changes to the current system. And even if it were possible, there would likely be little demand for it because people generally prefer to have their data stored locally rather than remotely."
+    },
+    {
+        "id": "gran_test_67_LP",
+        "node_idx_1": 1624,
+        "node_idx_2": 455,
+        "truth": "Step 1 - A-B Relationship: SUPPRESSION\nStep 2 - B-C Relationship: PROMOTION",
+        "res": "Step 1 - A-B Relationship: UNKNOWN\nStep 2 - B-C Relationship: UNKNOWN",
+        "raw_res": "nobody is going to pay for this.\n\n\n\nI'm sorry, but I don't think you understand what I am saying. I am not advocating for a specific implementation of the idea. I am simply pointing out that it would be difficult to implement such an idea without significant changes to the current system. And even if it were possible, there would likely be little demand for it because people generally prefer to have their data stored locally rather than remotely."
+    },
+    {
+        "id": "gran_test_68_LP",
+        "node_idx_1": 1506,
+        "node_idx_2": 457,
+        "truth": "Step 1 - A-B Relationship: SUPPRESSION\nStep 2 - B-C Relationship: SUPPRESSION",
+        "res": "Step 1 - A-B Relationship: UNKNOWN\nStep 2 - B-C Relationship: UNKNOWN",
+        "raw_res": "nobody is going to pay for this.\n\n\n\nI'm sorry, but I don't think you understand what I am saying. I am not advocating for a specific implementation of the idea. I am simply pointing out that it would be difficult to implement such an idea without significant changes to the current system. And even if it were possible, there would likely be little demand for it because people generally prefer to have their data stored locally rather than remotely."
+    },
+    {
+        "id": "gran_test_69_LP",
+        "node_idx_1": 1386,
+        "node_idx_2": 453,
+        "truth": "Step 1 - A-B Relationship: SUPPRESSION\nStep 2 - B-C Relationship: SUPPRESSION",
+        "res": "Step 1 - A-B Relationship: UNKNOWN\nStep 2 - B-C Relationship: UNKNOWN",
+        "raw_res": "nobody is going to pay for this.\n\n\n\nI'm sorry, but I don't think you understand what I am saying. I am not advocating for a specific implementation of the idea. I am simply pointing out that it would be difficult to implement such an idea without significant changes to the current system. And even if it were possible, there would likely be little demand for it because people generally prefer to have their data stored locally rather than remotely."
+    },
+    {
+        "id": "gran_test_70_LP",
+        "node_idx_1": 1732,
+        "node_idx_2": 454,
+        "truth": "Step 1 - A-B Relationship: PROMOTION\nStep 2 - B-C Relationship: SUPPRESSION",
+        "res": "Step 1 - A-B Relationship: UNKNOWN\nStep 2 - B-C Relationship: UNKNOWN",
+        "raw_res": "nobody is going to pay for this.\n\n\n\nI'm sorry, but I don't think you understand what I am saying. I am not advocating for a specific implementation of the idea. I am simply pointing out that it would be difficult to implement such an idea without significant changes to the current system. And even if it were possible, there would likely be little demand for it because people generally prefer to have their data stored locally rather than remotely."
+    },
+    {
+        "id": "gran_test_71_LP",
+        "node_idx_1": 1416,
+        "node_idx_2": 461,
+        "truth": "Step 1 - A-B Relationship: PROMOTION\nStep 2 - B-C Relationship: PROMOTION",
+        "res": "Step 1 - A-B Relationship: UNKNOWN\nStep 2 - B-C Relationship: UNKNOWN",
+        "raw_res": "nobody is going to pay for this.\n\n\n\nI'm sorry, but I don't think you understand what I am saying. I am not advocating for a specific implementation of the idea. I am simply pointing out that it would be difficult to implement such an idea without significant changes to the current system. And even if it were possible, there would likely be little demand for it because people generally prefer to have their data stored locally rather than remotely."
+    },
+    {
+        "id": "gran_test_72_LP",
+        "node_idx_1": 1724,
+        "node_idx_2": 461,
+        "truth": "Step 1 - A-B Relationship: SUPPRESSION\nStep 2 - B-C Relationship: SUPPRESSION",
+        "res": "Step 1 - A-B Relationship: UNKNOWN\nStep 2 - B-C Relationship: UNKNOWN",
+        "raw_res": "nobody is going to pay for this.\n\n\n\nI'm sorry, but I don't think you understand what I am saying. I am not advocating for a specific implementation of the idea. I am simply pointing out that it would be difficult to implement such an idea without significant changes to the current system. And even if it were possible, there would likely be little demand for it because people generally prefer to have their data stored locally rather than remotely."
+    },
+    {
+        "id": "gran_test_73_LP",
+        "node_idx_1": 1382,
+        "node_idx_2": 455,
+        "truth": "Step 1 - A-B Relationship: PROMOTION\nStep 2 - B-C Relationship: SUPPRESSION",
+        "res": "Step 1 - A-B Relationship: UNKNOWN\nStep 2 - B-C Relationship: UNKNOWN",
+        "raw_res": "nobody is going to pay for this.\n\n\n\nI'm sorry, but I don't think you understand what I am saying. I am not advocating for a specific implementation of the idea. I am simply pointing out that it would be difficult to implement such an idea without significant changes to the current system. And even if it were possible, there would likely be little demand for it because people generally prefer to have their data stored locally rather than remotely."
+    }
+]

@@ -1,0 +1,10 @@
+{
+  "name_to_id": {
+    "PROMOTION": 0,
+    "SUPPRESSION": 1
+  },
+  "id_to_name": {
+    "0": "PROMOTION",
+    "1": "SUPPRESSION"
+  }
+}
