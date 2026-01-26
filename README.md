@@ -1,4 +1,4 @@
-# SLC-TAHG: A Text-Attribute Hyper-Relational Graph Benchmark for Cascade Reasoning in SLC–Tumor Mechanisms
+# SLC-TAHG: Benchmarking Few-Shot Cascade Reasoning on Text-Attributed Hyper-Relational Graphs
 ## 1.Download SLC-TAHG
 We have uploaded the models and the proposed SLC-TAHG to Huggingface.
 | Huggingface Address | Description |
