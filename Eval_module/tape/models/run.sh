@@ -1,21 +1,40 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-# Step 1: Train TAPE GNN to refresh node embeddings
-echo "[1/4] Training GNN embeddings..."
+# 需要的环境变量（可选覆盖）：
+#   CUDA_VISIBLE_DEVICES, TAPE_DEVICE, TAPE_FORCE_CPU
+#   EPOCHS, LR, EMB_DIM, HID_DIM, DROPOUT, BATCH_SIZE, VAL_EVERY, OUTPUT_BASE
+
+export PYTHONPATH="$(pwd):${PYTHONPATH:-}"
+
+EPOCHS=${EPOCHS:-50}
+LR=${LR:-1e-4}
+EMB_DIM=${EMB_DIM:-384}
+HID_DIM=${HID_DIM:-384}
+DROPOUT=${DROPOUT:-0.3}
+BATCH_SIZE=${BATCH_SIZE:-128}
+VAL_EVERY=${VAL_EVERY:-5}
+OUTPUT_BASE=${OUTPUT_BASE:-$(pwd)/Eval_module/tape/models/output_data}
+
+echo "[TAPE] [1/3] Training GNN embeddings..."
 python3 -m Eval_module.tape.models.core.trainGNN "$@"
 
-# Step 2: Train TAPE LM to refresh text embeddings
-echo "[2/4] Training LM embeddings..."
+echo "[TAPE] [2/3] Training LM embeddings..."
 python3 -m Eval_module.tape.models.core.trainLM "$@"
 
-# Step 3: Run Optuna hyperparameter tuning for TAPE cascade model
-echo "[3/4] Running Optuna tuning..."
-python3 -m Eval_module.optuna_hyperparameter_tuning --model TAPE --n_trials 200 "$@"
+echo "[TAPE] [3/3] Training/Evaluating cascade model..."
+python3 -m Eval_module.tape.models.core.trainCascading \
+  --output_base "${OUTPUT_BASE}" \
+  --epochs "${EPOCHS}" \
+  --lr "${LR}" \
+  --emb_dim "${EMB_DIM}" \
+  --hidden_dim "${HID_DIM}" \
+  --dropout "${DROPOUT}" \
+  --batch_size "${BATCH_SIZE}" \
+  --val_every "${VAL_EVERY}" \
+  --use_node_feat 1 \
+  --use_text_feature 1 \
+  "$@"
 
-# Step 4: Perform 10-fold cross-validation with the best parameters
-# echo "[4/4] Running 10-fold cross-validation..."
-# python3 -m Eval_module.cross_validation --model TAPE --folds 10 "$@"
-
-echo "Pipeline completed."
+echo "[TAPE] Pipeline done. Outputs under ${OUTPUT_BASE}"
 
