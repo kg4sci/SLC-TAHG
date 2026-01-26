@@ -55,13 +55,13 @@ METRIC_KEYS = [
 
 MODEL_DEFAULTS: Dict[str, Dict[str, Any]] = {
     # StarE and HypE expect the caller to provide feature toggles.k=1，5，10，20，50，100
-    "StarE": {"use_text_features": False, "use_node_features": True},
+    "StarE": {"use_text_features": True, "use_node_features": True},
     "HypE": {"use_text_features": True, "use_node_features": True},
     "NaLP": {"use_text_features": True, "use_node_features": True},
     "NS-HART": {"use_text_features": True, "use_node_features":True},
-    "N-ComplEx": {"use_text_features": False, "use_node_features": True},
+    "N-ComplEx": {"use_text_features": True, "use_node_features": True},
     "RGCN": {"use_slc_neighbors": True},
-    "GRAN": {"use_text_features": True, "use_node_features": False},
+    "GRAN": {"use_text_features": True, "use_node_features": True},
     "RAM": {"use_text_features": True, "use_node_features": True},
     # TAPE few-shot 默认不截断，由 CLI/外部参数控制
     "TAPE": {"few_shot_k": None, "few_shot_balance": None},
@@ -504,7 +504,7 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument(
         "--output",
         type=str,
-        default=str(PROJECT_ROOT / "Best_modelPara" / "Compl_none.json"),
+        default=str(PROJECT_ROOT / "Best_modelPara" / "all_models.json"),
         help="Path to JSON file storing aggregated results",
     )
     parser.add_argument(
