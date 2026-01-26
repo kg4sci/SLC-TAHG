@@ -21,5 +21,20 @@ pip install -r requirements_graphgpt.txt
 bash graphgpt/gr/run_stage1.sh
 bash graphgpt/gr/train_gran_stage2.sh
 bash graphgpt/gr/eval_gran.sh
+python -m graphgpt.gr.eval_gran_cascading \
+  --model_output_file ./graphgpt/gr/graphgpt/eval/arxiv_test_res_all.json \
+  --save_path ./graphgpt/gr/graphgpt/eval/arxiv_test_res_all_metrics.json  #The corresponding model_output_file and save_path can be modified as needed.
+```
+### (1)TAPE models
+**commands:**
+```python
+cd Eval_module
+conda create --name TAPE python==3.8
+conda activate TAPE
+pip install -r requirements_tape.txt
+```
+**How to run**
+```python
+bash tape/models/run.sh
 ```
 
