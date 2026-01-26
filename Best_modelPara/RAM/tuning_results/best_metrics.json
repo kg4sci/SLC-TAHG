@@ -1,0 +1,42 @@
+{
+  "model": "RAM",
+  "timestamp": "2025-12-24T01:07:53.944707",
+  "n_trials": 200,
+  "best_params": {
+    "epochs": 50,
+    "lr": 0.0005488724581326264,
+    "embedding_dim": 128,
+    "n_parts": 6,
+    "max_ary": 5,
+    "dropout": 0.1,
+    "use_text_features": false,
+    "use_node_features": true
+  },
+  "best_value": 0.549618320610687,
+  "best_trial": 208,
+  "best_val_metrics": {
+    "path_acc": 0.549618320610687,
+    "path_f1": 0.7093596059113301,
+    "ab_acc": 0.7099236641221374,
+    "ab_f1": 0.41517857142857145,
+    "ab_auc_roc": 0.5,
+    "ab_mcc": 0.0,
+    "bc_acc": 0.6335877862595419,
+    "bc_f1": 0.3878504672897196,
+    "bc_auc_roc": 0.5,
+    "bc_mcc": 0.0
+  },
+  "best_test_metrics": {
+    "path_acc": 0.18045112781954886,
+    "path_f1": 0.3057324840764331,
+    "ab_acc": 0.40601503759398494,
+    "ab_f1": 0.2887700534759358,
+    "ab_auc_roc": 0.5,
+    "ab_mcc": 0.0,
+    "bc_acc": 0.6240601503759399,
+    "bc_f1": 0.38425925925925924,
+    "bc_auc_roc": 0.5,
+    "bc_mcc": 0.0
+  },
+  "best_epoch": 10
+}

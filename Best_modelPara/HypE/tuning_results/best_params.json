@@ -1,0 +1,8 @@
+{
+  "epochs": 150,
+  "lr": 1.2100936800820315e-05,
+  "embedding_dim": 64,
+  "hidden_dim": 192,
+  "num_layers": 1,
+  "dropout": 0.0
+}

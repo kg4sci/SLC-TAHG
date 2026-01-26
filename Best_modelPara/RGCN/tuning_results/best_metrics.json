@@ -1,0 +1,180 @@
+{
+  "model": "RGCN",
+  "timestamp": "2026-01-08T06:35:03.408465",
+  "n_trials": 140,
+  "best_params": {
+    "epochs": 50,
+    "lr": 0.0006362391042467869,
+    "weight_decay": 3.9677836919324234e-05,
+    "hidden_dim": 512,
+    "dropout_rate": 0.4,
+    "batch_size": 16
+  },
+  "best_value": 0.7022900763358778,
+  "best_trial": 133,
+  "best_val_metrics": {
+    "path_acc": 0.7022900763358778,
+    "path_f1": 0.8251121076233184,
+    "ab_acc": 0.7557251908396947,
+    "ab_f1": 0.6935672514619884,
+    "ab_auc_roc": 0.742906918865107,
+    "ab_mcc": 0.47258403468588245,
+    "bc_acc": 0.7557251908396947,
+    "bc_f1": 0.6759431045145331,
+    "bc_auc_roc": 0.7226231956197113,
+    "bc_mcc": 0.49955225208177306,
+    "ab_labels": [
+      0,
+      1
+    ],
+    "ab_label_names": [
+      "PROMOTION",
+      "SUPPRESSION"
+    ],
+    "ab_confusion_matrix": [
+      [
+        79,
+        3
+      ],
+      [
+        29,
+        20
+      ]
+    ],
+    "ab_precision_by_class": [
+      0.7314814814814815,
+      0.8695652173913043
+    ],
+    "ab_recall_by_class": [
+      0.9634146341463414,
+      0.40816326530612246
+    ],
+    "ab_f1_by_class": [
+      0.8315789473684211,
+      0.5555555555555556
+    ],
+    "ab_support_by_class": [
+      82,
+      49
+    ],
+    "ab_balanced_acc": 0.6857889497262319,
+    "bc_labels": [
+      0,
+      1
+    ],
+    "bc_label_names": [
+      "PROMOTION",
+      "SUPPRESSION"
+    ],
+    "bc_confusion_matrix": [
+      [
+        82,
+        0
+      ],
+      [
+        32,
+        17
+      ]
+    ],
+    "bc_precision_by_class": [
+      0.7192982456140351,
+      1.0
+    ],
+    "bc_recall_by_class": [
+      1.0,
+      0.3469387755102041
+    ],
+    "bc_f1_by_class": [
+      0.8367346938775511,
+      0.5151515151515151
+    ],
+    "bc_support_by_class": [
+      82,
+      49
+    ],
+    "bc_balanced_acc": 0.673469387755102
+  },
+  "best_test_metrics": {
+    "path_acc": 0.5789473684210527,
+    "path_f1": 0.7333333333333333,
+    "ab_acc": 0.7142857142857143,
+    "ab_f1": 0.6874072241464622,
+    "ab_auc_roc": 0.6916547106647537,
+    "ab_mcc": 0.3805639919087067,
+    "bc_acc": 0.6842105263157895,
+    "bc_f1": 0.6297720042417816,
+    "bc_auc_roc": 0.7271561771561772,
+    "bc_mcc": 0.3353315418364154,
+    "ab_labels": [
+      0,
+      1
+    ],
+    "ab_label_names": [
+      "PROMOTION",
+      "SUPPRESSION"
+    ],
+    "ab_confusion_matrix": [
+      [
+        67,
+        15
+      ],
+      [
+        23,
+        28
+      ]
+    ],
+    "ab_precision_by_class": [
+      0.7444444444444445,
+      0.6511627906976745
+    ],
+    "ab_recall_by_class": [
+      0.8170731707317073,
+      0.5490196078431373
+    ],
+    "ab_f1_by_class": [
+      0.7790697674418605,
+      0.5957446808510638
+    ],
+    "ab_support_by_class": [
+      82,
+      51
+    ],
+    "ab_balanced_acc": 0.6830463892874223,
+    "bc_labels": [
+      0,
+      1
+    ],
+    "bc_label_names": [
+      "PROMOTION",
+      "SUPPRESSION"
+    ],
+    "bc_confusion_matrix": [
+      [
+        71,
+        7
+      ],
+      [
+        35,
+        20
+      ]
+    ],
+    "bc_precision_by_class": [
+      0.6698113207547169,
+      0.7407407407407407
+    ],
+    "bc_recall_by_class": [
+      0.9102564102564102,
+      0.36363636363636365
+    ],
+    "bc_f1_by_class": [
+      0.7717391304347826,
+      0.4878048780487805
+    ],
+    "bc_support_by_class": [
+      78,
+      55
+    ],
+    "bc_balanced_acc": 0.6369463869463869
+  },
+  "best_epoch": null
+}

@@ -1,0 +1,10 @@
+{
+  "embedding_dim": 192,
+  "epochs": 130,
+  "lr": 0.0024424201400482376,
+  "weight_decay": 1.597387868406689e-05,
+  "encoder_hidden_dim": 128,
+  "encoder_layers": 1,
+  "encoder_heads": 2,
+  "dropout": 0.5
+}

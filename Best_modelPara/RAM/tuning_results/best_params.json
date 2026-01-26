@@ -1,0 +1,8 @@
+{
+  "epochs": 50,
+  "lr": 0.0005488724581326264,
+  "embedding_dim": 128,
+  "n_parts": 6,
+  "max_ary": 5,
+  "dropout": 0.1
+}

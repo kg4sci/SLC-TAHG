@@ -1,0 +1,180 @@
+{
+  "model": "StarE",
+  "timestamp": "2026-01-08T06:28:07.711739",
+  "n_trials": 200,
+  "best_params": {
+    "epochs": 120,
+    "lr": 0.0012532370164049982,
+    "embedding_dim": 128,
+    "hidden_dim": 192,
+    "num_layers": 2,
+    "dropout": 0.5
+  },
+  "best_value": 0.6412213740458015,
+  "best_trial": 275,
+  "best_val_metrics": {
+    "path_acc": 0.6412213740458015,
+    "path_f1": 0.7813953488372093,
+    "ab_acc": 0.732824427480916,
+    "ab_f1": 0.6260500774814453,
+    "ab_auc_roc": 0.7095665961945031,
+    "ab_mcc": 0.3348610817259372,
+    "bc_acc": 0.6946564885496184,
+    "bc_f1": 0.5201465201465202,
+    "bc_auc_roc": 0.7291989664082688,
+    "bc_mcc": 0.2569836907221574,
+    "ab_labels": [
+      0,
+      1
+    ],
+    "ab_label_names": [
+      "PROMOTION",
+      "SUPPRESSION"
+    ],
+    "ab_confusion_matrix": [
+      [
+        83,
+        5
+      ],
+      [
+        30,
+        13
+      ]
+    ],
+    "ab_precision_by_class": [
+      0.7345132743362832,
+      0.7222222222222222
+    ],
+    "ab_recall_by_class": [
+      0.9431818181818182,
+      0.3023255813953488
+    ],
+    "ab_f1_by_class": [
+      0.8258706467661692,
+      0.4262295081967213
+    ],
+    "ab_support_by_class": [
+      88,
+      43
+    ],
+    "ab_balanced_acc": 0.6227536997885835,
+    "bc_labels": [
+      0,
+      1
+    ],
+    "bc_label_names": [
+      "PROMOTION",
+      "SUPPRESSION"
+    ],
+    "bc_confusion_matrix": [
+      [
+        85,
+        1
+      ],
+      [
+        39,
+        6
+      ]
+    ],
+    "bc_precision_by_class": [
+      0.6854838709677419,
+      0.8571428571428571
+    ],
+    "bc_recall_by_class": [
+      0.9883720930232558,
+      0.13333333333333333
+    ],
+    "bc_f1_by_class": [
+      0.8095238095238095,
+      0.23076923076923078
+    ],
+    "bc_support_by_class": [
+      86,
+      45
+    ],
+    "bc_balanced_acc": 0.5608527131782945
+  },
+  "best_test_metrics": {
+    "path_acc": 0.41353383458646614,
+    "path_f1": 0.5851063829787234,
+    "ab_acc": 0.6165413533834586,
+    "ab_f1": 0.6109103424539666,
+    "ab_auc_roc": 0.6315289648622983,
+    "ab_mcc": 0.23384917942203426,
+    "bc_acc": 0.6015037593984962,
+    "bc_f1": 0.5660818713450292,
+    "bc_auc_roc": 0.5932203389830508,
+    "bc_mcc": 0.17133541252539916,
+    "ab_labels": [
+      0,
+      1
+    ],
+    "ab_label_names": [
+      "PROMOTION",
+      "SUPPRESSION"
+    ],
+    "ab_confusion_matrix": [
+      [
+        49,
+        32
+      ],
+      [
+        19,
+        33
+      ]
+    ],
+    "ab_precision_by_class": [
+      0.7205882352941176,
+      0.5076923076923077
+    ],
+    "ab_recall_by_class": [
+      0.6049382716049383,
+      0.6346153846153846
+    ],
+    "ab_f1_by_class": [
+      0.6577181208053692,
+      0.5641025641025641
+    ],
+    "ab_support_by_class": [
+      81,
+      52
+    ],
+    "ab_balanced_acc": 0.6197768281101614,
+    "bc_labels": [
+      0,
+      1
+    ],
+    "bc_label_names": [
+      "PROMOTION",
+      "SUPPRESSION"
+    ],
+    "bc_confusion_matrix": [
+      [
+        59,
+        15
+      ],
+      [
+        38,
+        21
+      ]
+    ],
+    "bc_precision_by_class": [
+      0.6082474226804123,
+      0.5833333333333334
+    ],
+    "bc_recall_by_class": [
+      0.7972972972972973,
+      0.3559322033898305
+    ],
+    "bc_f1_by_class": [
+      0.6900584795321637,
+      0.4421052631578947
+    ],
+    "bc_support_by_class": [
+      74,
+      59
+    ],
+    "bc_balanced_acc": 0.5766147503435639
+  },
+  "best_epoch": 20
+}
