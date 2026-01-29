@@ -9,7 +9,7 @@ def set_cfg(cfg):
     # Path options (absolute base for outputs/embeddings)
     # ------------------------------------------------------------------------ #
     cfg.paths = CN()
-    cfg.paths.output_base = "/mnt/data/lxy/benchmark_paper/Eval_module/tape/models/output_data"
+    cfg.paths.output_base = "tape/models/output_data"
 
     # ------------------------------------------------------------------------ #
     # Basic options
