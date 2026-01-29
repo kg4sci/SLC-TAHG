@@ -8909,7 +8909,6 @@
   "GraphGPT": {
     "avg_metrics": {
       "_ablation": "text",
-      "_fold": "0",
       "ab_acc": 0.5160201149425288,
       "ab_auc_roc": 0.5160201149425288,
       "ab_balanced_acc": 0.5,
