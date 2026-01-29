@@ -26,44 +26,14 @@ def load_gpt_preds(dataset, topk):
 
 def load_data(
     dataset,
-    use_dgl=False,
-    use_text=False,
+    use_dgl=True,
+    use_text=True,
     use_gpt=False,
     seed=0,
     few_shot_k=None,
     few_shot_balance=None,
 ):
-    if dataset == 'cora':
-        from tape.models.core.data_utils.load_cora import get_raw_text_cora as get_raw_text
-        num_classes = 7
-    elif dataset == 'pubmed':
-        from tape.models.core.data_utils.load_pubmed import get_raw_text_pubmed as get_raw_text
-        num_classes = 3
-    elif dataset == 'arxiv':
-        from tape.models.core.data_utils.load_arxiv import get_raw_text_arxiv as get_raw_text
-        num_classes = 40
-    elif dataset == 'ogbn-products':
-        from tape.models.core.data_utils.load_products import get_raw_text_products as get_raw_text
-        num_classes = 47
-    elif dataset == 'arxiv_2023':
-        from tape.models.core.data_utils.load_arxiv_2023 import get_raw_text_arxiv_2023 as get_raw_text
-        num_classes = 40
-    elif dataset == 'citeseer':
-        from tape.models.core.data_utils.load_citeseer import get_raw_text_citeseer as get_raw_text
-        num_classes = 6
-    elif dataset == 'reddit':
-        from tape.models.core.data_utils.load_re import get_raw_text_re as get_raw_text
-        num_classes = 2
-    elif dataset == 'instagram':
-        from tape.models.core.data_utils.load_ins import get_raw_text_ins as get_raw_text
-        num_classes = 2
-    elif dataset == 'wikics':
-        from tape.models.core.data_utils.load_wiki import get_raw_text_wiki as get_raw_text
-        num_classes = 10
-    # elif dataset == 'chemistry'or'chemistry_author_no' or 'chemistry_abstract_no' or 'chemistry_journal_no' or 'chemistry_keywords_no' or 'chemistry_fullhomo':  # 新增支持的 'chemistry' 数据集
-    #     from tape.models.core.data_utils.load_chemistry import get_raw_text_chemistry as get_raw_text  # 自定义函数
-    #     num_classes = 107  
-    elif dataset == 'SLC_database':
+    if dataset == 'SLC_database':
         from tape.models.core.data_utils.load_slc_database import get_raw_text_slc_database as get_raw_text
         # 节点标签类别数来自 Neo4j 标签，先设占位；实际由 loader 内部确定 y，但这里保持兼容返回 num_classes
         num_classes = None
