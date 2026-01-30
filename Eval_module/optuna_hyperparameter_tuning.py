@@ -1,21 +1,6 @@
-﻿"""
-Optuna超参数自动优化框架 - 绝对导入版本
-支持模型: RGCN、StarE、HypE、NaLP、GRAN、RAM、NS-HART、N-ComplEx
-
-更新日志:
-- RGCNTuner: 健壮的返回值处理（支持新返回格式包含val_metrics）
-- StarETuner: 完整实现，返回验证集Path F1
-- HypETuner: N-ary知识图表的超参数优化
-- NaLPTuner: N-ary线性模式的超参数优化
-- GRANTuner: 图关系注意力模型的超参数优化
-- NSHARTTuner: HART级联推理模型的超参数优化
-- RAMTuner: 关系注意力机制的超参数优化
-- NComplexTuner: 保持原有功能
-"""
 import os
 
 # DGL在导入期间会尝试加载GraphBolt，提前禁止避免缺失依赖报错
-# 此处直接覆盖环境变量，确保任何上游设置都不会重新启用GraphBolt
 os.environ["DGL_USE_GRAPHBOLT"] = "0"
 
 import optuna
