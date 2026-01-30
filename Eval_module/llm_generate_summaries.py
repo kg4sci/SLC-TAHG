@@ -1,35 +1,3 @@
-"""Offline script to precompute LLM summaries for pathway/disease/SLC pairs.
-
-Usage example::
-
-    python llm_generate_summaries.py \
-        --pair-types slc_pathway pathway_disease \
-        --overwrite
-
-The script connects to MongoDB once, reads all pair documents, gathers the
-associated papers' title + abstract text, invokes an LLM to summarise, and
-stores per-pair summaries in local JSONL files. Downstream models can consume
-these JSONL files without touching MongoDB again.
-
-Environment variables of interest:
-    OPENAI_API_KEY         API key for OpenAI-compatible endpoint.
-    OPENAI_BASE_URL        Optional base URL for self-hosted deployments.
-    LLM_MODEL_NAME         Override default model (default: config.LLM_MODEL_NAME).
-    SUMMARY_OUTPUT_DIR     Output directory (default: config.SUMMARY_OUTPUT_DIR).
-    LLM_MAX_OUTPUT_TOKENS  Max tokens for summaries (default: 512).
-
-The produced JSON lines follow the schema::
-
-    {
-        "pair_type": "slc_pathway",
-        "key1": "SLC1A5",
-        "key2": "oxidative phosphorylation",
-        "summary": "... <= 512 tokens ...",
-        "dois": ["10.1000/j.jmb.2010.01.001", ...]
-    }
-
-"""
-
 from __future__ import annotations
 
 import argparse
@@ -55,12 +23,9 @@ except ImportError as exc:  # pragma: no cover - ensures actionable error
     ) from exc
 
 client = OpenAI(
-# chatgpt
-# base_url="https://35api.huinong.co/v1",#中转api，如果直接用openai的key则不需要加这一行
-# api_key="sk-Iyo0TKs6ttlhpFOm73Ef3aB2E98840A0927341D15a5c1704"
-# bltcy.ai API (兼容OpenAI格式)
-base_url="https://api.bltcy.ai/v1",  #https://one-api.bltcy.top/v1/chat/completions(gemini-1.5-pro)
-api_key="sk-nNaTuesu68YEGEK060BTydE5fihxblAyJnPRrROuiEEUxmrx"
+# bltcy.ai API
+base_url="xxx", 
+api_key="xxxxxx"
 )
 
 from config import (
@@ -667,3 +632,4 @@ def main() -> None:
 
 if __name__ == "__main__":
     main()
+
