@@ -162,6 +162,35 @@ def sample_subgraph_for_path(
     return edge_index, node_list
 
 
+def _build_human_prompt(A_name: str, B_name: str, C_name: str, A: int, B: int, C: int, Event: int, variant: str) -> str:
+    """Return prompt text for the specified variant (stage1 vs stage2)."""
+    base_header = (
+        f"Given a knowledge graph with entities:\n"
+        f"- Entity A (SLCGene): {A_name} (ID: {A})\n"
+        f"- Entity B (Pathway): {B_name} (ID: {B})\n"
+        f"- Entity C (Disease): {C_name} (ID: {C})\n"
+    )
+    if Event != A:
+        base_header += f"- Event node: {Event}\n"
+
+    # Stage1: 更偏结构化描述
+    if variant == "stage1":
+        body = (
+            "You will inspect two subgraphs extracted around these entities.\n"
+            "Step 1: From the first subgraph <graph>, decide the relationship between A and B.\n"
+            "Step 2: Using the A-B decision, infer the relationship between B and C from the second subgraph <graph>.\n"
+            "Allowed relationship labels: PROMOTION or SUPPRESSION.\n"
+        )
+    else:  # stage2/default
+        body = (
+            "Please predict the relationship types in a cascading manner:\n"
+            "Step 1: Predict the relationship type between A and B using the first subgraph: <graph>\n"
+            "Step 2: Based on the predicted A-B relationship from Step 1, predict the relationship type between B and C using the second subgraph: <graph>\n"
+            "\nImportant: The relationship type must be one of: PROMOTION or SUPPRESSION.\n"
+        )
+    return base_header + "\n" + body
+
+
 def build_instruction_sample(
     path: Dict,
     idx: int,
@@ -171,7 +200,8 @@ def build_instruction_sample(
     dgl_g: dgl.DGLGraph,
     text_features_ab: Dict[int, torch.Tensor] = None,
     text_features_bc: Dict[int, torch.Tensor] = None,
-    use_text_features: bool = False
+    use_text_features: bool = False,
+    prompt_variant: str = "stage2",
 ) -> Dict:
     A = path["A"]
     B = path["B"]
@@ -191,25 +221,8 @@ def build_instruction_sample(
     subgraph_2_nodes = [B, C, Event] if Event != B else [B, C]
     edge_index_2, node_list_2 = sample_subgraph_for_path(dgl_g, subgraph_2_nodes)
     
-    # 提示词
-    human_prompt = (
-        f"Given a knowledge graph with entities:\n"
-        f"- Entity A (SLCGene): {A_name} (ID: {A})\n"
-        f"- Entity B (Pathway): {B_name} (ID: {B})\n"
-        f"- Entity C (Disease): {C_name} (ID: {C})\n"
-    )
-    if Event != A:
-        human_prompt += f"- Event node: {Event}\n"
-    
-    human_prompt += (
-        f"\nPlease predict the relationship types in a cascading manner:\n"
-        f"Step 1: Predict the relationship type between A and B using the first subgraph: <graph>\n"
-        f"Step 2: Based on the predicted A-B relationship from Step 1, predict the relationship type between B and C using the second subgraph: <graph>\n"
-        f"\nImportant: The relationship type must be one of: PROMOTION or SUPPRESSION.\n"
-        f"Please provide your answer in the following format:\n"
-        f"Step 1 - A-B Relationship: [PROMOTION or SUPPRESSION]\n"
-        f"Step 2 - B-C Relationship: [PROMOTION or SUPPRESSION]\n"
-    )
+    # 提示词（按 variant 区分 stage1/stage2）
+    human_prompt = _build_human_prompt(A_name, B_name, C_name, A, B, C, Event, prompt_variant)
     
     gpt_response = (
         f"Step 1 - A-B Relationship: {rel_AB}\n"
@@ -256,6 +269,7 @@ def build_gran_instruction_dataset(
     text_feature_dim: int = 768,
     text_feature_encoder: str = "sentence-transformers/all-MiniLM-L6-v2",
     include_node_features: bool = True,
+    prompt_variants: Optional[List[str]] = None,
     k_folds: Optional[int] = None,
     fold_idx: Optional[int] = None,
     seed: int = 42,
@@ -388,20 +402,22 @@ def build_gran_instruction_dataset(
         text_feat_val = load_text_features_for_pairs(val_pos, name_to_id)
         text_feat_test = load_text_features_for_pairs(test_pos, name_to_id)
     
-    # 7. 构建数据集
+    # 7. 构建数据集（支持多种 prompt 变体，默认 stage2+stage1）
     print("\n[6/6] Building JSONs...")
     os.makedirs(output_dir, exist_ok=True)
+
+    variant_list = prompt_variants or ["stage2", "stage1"]
 
     # 收集 graph_content
     node_texts: Dict[int, Dict[str, str]] = {}
     pair_texts: Dict[str, Dict[str, str]] = {}
 
-    def process_split(data_list, split_type, tf_ab, tf_bc):
+    def process_split(data_list, split_type, tf_ab, tf_bc, variant):
         samples = []
         for idx, path in enumerate(data_list):
             s = build_instruction_sample(
                 path, idx, split_type, name_to_id, id_to_name, dgl_g,
-                tf_ab, tf_bc, use_text_features
+                tf_ab, tf_bc, use_text_features, prompt_variant=variant
             )
             samples.append(s)
 
@@ -442,27 +458,28 @@ def build_gran_instruction_dataset(
                     }
         return samples
 
-    train_data = process_split(train_pos, "train", text_feat_train[0], text_feat_train[1])
-    # 负样本
-    for idx, path in enumerate(train_neg):
-        s = build_instruction_sample(
-            path, len(train_pos)+idx, "train_neg", name_to_id, id_to_name, dgl_g,
-            None, None, False
-        )
-        train_data.append(s)
+    for variant in variant_list:
+        train_data = process_split(train_pos, "train", text_feat_train[0], text_feat_train[1], variant)
+        # 负样本（prompt 仍使用当前 variant）
+        for idx, path in enumerate(train_neg):
+            s = build_instruction_sample(
+                path, len(train_pos)+idx, "train_neg", name_to_id, id_to_name, dgl_g,
+                None, None, False, prompt_variant=variant
+            )
+            train_data.append(s)
+            
+        val_data = process_split(val_pos, "val", text_feat_val[0], text_feat_val[1], variant)
+        test_data = process_split(test_pos, "test", text_feat_test[0], text_feat_test[1], variant)
         
-    val_data = process_split(val_pos, "val", text_feat_val[0], text_feat_val[1])
-    test_data = process_split(test_pos, "test", text_feat_test[0], text_feat_test[1])
-    
-    # 保存
-    with open(os.path.join(output_dir, "gran_train_instruct.json"), 'w') as f:
-        json.dump(train_data, f, indent=2)
-    with open(os.path.join(output_dir, "gran_val_instruct.json"), 'w') as f:
-        json.dump(val_data, f, indent=2)
-    with open(os.path.join(output_dir, "gran_test_instruct.json"), 'w') as f:
-        json.dump(test_data, f, indent=2)
-        
-    print(f"\nDone! Train: {len(train_data)}, Val: {len(val_data)}, Test: {len(test_data)}")
+        suffix = "" if variant == "stage2" else f"_{variant}"
+        with open(os.path.join(output_dir, f"gran_train_instruct{suffix}.json"), 'w') as f:
+            json.dump(train_data, f, indent=2)
+        with open(os.path.join(output_dir, f"gran_val_instruct{suffix}.json"), 'w') as f:
+            json.dump(val_data, f, indent=2)
+        with open(os.path.join(output_dir, f"gran_test_instruct{suffix}.json"), 'w') as f:
+            json.dump(test_data, f, indent=2)
+            
+        print(f"  ✓ Saved variant '{variant}' -> Train: {len(train_data)}, Val: {len(val_data)}, Test: {len(test_data)}")
 
     # 保存 graph_content（节点+关系文本），供 Stage1/Stage2 --graph_content 使用
     if graph_content_out and (include_node_features or use_text_features):
@@ -489,13 +506,14 @@ def parse_args():
     parser.add_argument("--refresh_cache", action="store_true")
     parser.add_argument("--max_paths", type=int, default=None)
     parser.add_argument("--split_seed", type=int, default=42)
-    parser.add_argument("--k_folds", type=int, default=None, help="启用 k 折时指定折数")
-    parser.add_argument("--fold_idx", type=int, default=None, help="当前折编号 [0, k_folds)")
+    parser.add_argument("--prompt_variants", type=str, default="stage2,stage1",
+                        help="Comma-separated prompt variants to generate (e.g., stage2,stage1)")
     return parser.parse_args()
 
 
 if __name__ == "__main__":
     args = parse_args()
+    prompt_variants = [v.strip() for v in args.prompt_variants.split(',') if v.strip()]
     build_gran_instruction_dataset(
         output_dir=args.output_dir,
         use_text_features=not args.disable_text_features,
@@ -507,7 +525,5 @@ if __name__ == "__main__":
         refresh_cache=args.refresh_cache,
         max_paths=args.max_paths,
         include_node_features=not args.disable_node_features,
-        k_folds=args.k_folds,
-        fold_idx=args.fold_idx,
-        seed=args.split_seed,
+        prompt_variants=prompt_variants,
     )
