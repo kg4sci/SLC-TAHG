@@ -7,9 +7,9 @@ import os
 os.environ["TRANSFORMERS_OFFLINE"] = "1"
 os.environ["CUDA_VISIBLE_DEVICES"] = "0"
 dataname = 'SLC_database'
-data = torch.load(f"../SLC_database.pt")
+data = torch.load(f"Eval_module/tape/SLC_database.pt")
 raw_texts = data.raw_texts
-model_name = "llama2-7b-hf-chat"
+model_name = "Eval_module/tape/models/llama2-7b-hf-chat"
 tokenizer = AutoTokenizer.from_pretrained(model_name, local_files_only=True)
 tokenizer.pad_token = tokenizer.bos_token
 # 确保生成时有有效的 pad/eos 配置，避免数值异常
@@ -26,10 +26,10 @@ index_list = list(range(len(raw_texts)))
 
 if dataname == 'SLC_database':
     prompt = (
-        "\nYou are an expert reviewer.\n"
-        "Text:\n{TEXT}\n\n"
-        "Question: Which relations best fits SLC node and pathway node? Building upon the relationship between the previous pair of nodes, which relations best fits pathw node and disease node?Determine the most appropriate relationship between the two pairs of nodes that share conditional dependencies."
-        "\nAnswer:"
+        "Input triple with attributes:\n{TEXT}\n\n"
+        "Task: Infer relations between (SLC, Pathway) and then (Pathway, Disease), where allowed labels are PROMOTION or SUPPRESSION.\n"
+        "Return JSON ONLY in this schema (no extra text):\n"
+        "{{\n  \"labels\": [\"PROMOTION|SUPPRESSION\", \"PROMOTION|SUPPRESSION\"],\n  \"reasons\": [\"brief reason for SLC-Pathway\", \"brief reason for Pathway-Disease\"]\n}}"
     )
 batch_size = 2
 data_loader = DataLoader(list(zip(raw_texts, index_list)), batch_size=batch_size, sampler=SequentialSampler(list(zip(raw_texts, index_list))))
