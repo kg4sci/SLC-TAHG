@@ -240,7 +240,7 @@ def _collect_pair_texts_per_event(
 
 
 def get_raw_text_slc_database(
-    use_text: bool = False,
+    use_text: bool = True,
     seed: int = 0,
     few_shot_k: Optional[int] = None,
     few_shot_balance: Optional[str] = None,
@@ -289,10 +289,56 @@ def get_raw_text_slc_database(
     if use_text:
         # 基础节点属性文本（已在 db_neo4j 合并，避免 rel_AB/rel_BC 泄露）
         base_text = [n.get("text", "") or "" for n in nodes]
+
+        # 节点 id -> 名称 / 标签
+        id_to_label = {n["id"]: (n.get("labels", []) or [""])[0] for n in nodes}
+        id_to_name = {n["id"]: n.get("name", "") for n in nodes}
+
+        # 构造以 RelaEvent 为中心的三元文本：搜集其直连的 SLCGene / Pathway / Disease 名称
+        triplet_texts = []
+        rel_ab_texts, rel_bc_texts = ["" for _ in range(n_nodes)], ["" for _ in range(n_nodes)]
+        for n in nodes:
+            nid = n["id"]
+            label = id_to_label.get(nid, "")
+            name = id_to_name.get(nid, "")
+
+            if label != "RelaEvent":
+                # 非事件节点：仍写入基础信息，方便索引对齐
+                triplet_texts.append(
+                    f"NodeLabel:{label}; Name:{name}; SLCs:[]; Pathways:[]; Diseases:[]; Attrs:{base_text[node_id_map[nid]]}"
+                )
+                continue
+
+            slc_set, pw_set, dz_set = set(), set(), set()
+            for r in rels:
+                h, t = r["head_id"], r["tail_id"]
+                hl, tl = id_to_label.get(h, ""), id_to_label.get(t, "")
+                hn, tn = id_to_name.get(h, ""), id_to_name.get(t, "")
+
+                if h == nid:
+                    if tl == "SLCGene":
+                        slc_set.add(tn)
+                    elif tl == "Pathway":
+                        pw_set.add(tn)
+                    elif tl == "Disease":
+                        dz_set.add(tn)
+                if t == nid:
+                    if hl == "SLCGene":
+                        slc_set.add(hn)
+                    elif hl == "Pathway":
+                        pw_set.add(hn)
+                    elif hl == "Disease":
+                        dz_set.add(hn)
+
+            triplet_texts.append(
+                f"NodeLabel:{label}; Name:{name}; SLCs:{sorted(slc_set)}; Pathways:{sorted(pw_set)}; Diseases:{sorted(dz_set)}; Attrs:{base_text[node_id_map[nid]]}"
+            )
+
         # 预生成证据文本：按 rel_AB / rel_BC 分开，只给事件节点
         ab_texts, bc_texts = _collect_pair_texts_per_event(nodes, rels, node_id_map)
-        # 对 LM 训练的主文本，仍以基础文本为主，不混入 rel_AB/rel_BC 证据
-        text_list = base_text
+
+        # 对 LM 训练的主文本，改为以 RelaEvent 为中心的三元描述
+        text_list = triplet_texts
         # 同时把 AB/BC 证据挂到 data 上，供后续级联任务或自定义处理使用
         data.rel_ab_texts = ab_texts
         data.rel_bc_texts = bc_texts

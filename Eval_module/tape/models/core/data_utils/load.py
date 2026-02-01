@@ -26,8 +26,8 @@ def load_gpt_preds(dataset, topk):
 
 def load_data(
     dataset,
-    use_dgl=True,
-    use_text=True,
+    use_dgl=False,
+    use_text=False,
     use_gpt=False,
     seed=0,
     few_shot_k=None,
@@ -50,15 +50,15 @@ def load_data(
         return data, num_classes
 
     #****************llama评估用下面
-    if use_gpt:#************更改
+    if use_gpt:
         # 1) 先加载原始 data 和 total count
         data, _ = get_raw_text(use_text=False, seed=seed, few_shot_k=few_shot_k, few_shot_balance=few_shot_balance)
         if num_classes is None and hasattr(data, "y") and data.y is not None:
             num_classes = int(torch.unique(data.y).numel())
-        folder_path = os.path.join('llama_response', dataset)
+        folder_path = os.path.join('/mnt/data/lxy/benchmark_paper/llama_response', dataset)
         print(f"Using GPT outputs from: {folder_path}")
 
-        # 2) 列出所有已有的 json 文件，提取出它们的索引（文件名前缀）
+        # 2) 列出所有已有的 json 文件，提取出它们的索引
         all_files = [
             f for f in os.listdir(folder_path)
             if f.endswith('.json') and f[:-5].isdigit()
@@ -76,8 +76,17 @@ def load_data(
 
         # 4) 把 data.y（和 data.x，如果有的话）也只保留这些索引
         data.y = data.y[available_idxs]
-        if hasattr(data, 'x'):
+        if hasattr(data, 'x') and data.x is not None:
             data.x = data.x[available_idxs]
+        # 同步裁剪 mask，保持长度一致
+        for mask_name in ['train_mask', 'val_mask', 'test_mask']:
+            if hasattr(data, mask_name):
+                m = getattr(data, mask_name)
+                if m is not None:
+                    setattr(data, mask_name, m[available_idxs])
+        # 更新 num_nodes
+        if hasattr(data, 'num_nodes'):
+            data.num_nodes = len(available_idxs)
     else:
         # 标准文本加载
         data, text = get_raw_text(use_text=True, seed=seed, few_shot_k=few_shot_k, few_shot_balance=few_shot_balance)
