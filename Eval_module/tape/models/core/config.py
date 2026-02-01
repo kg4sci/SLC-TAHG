@@ -92,7 +92,7 @@ def set_cfg(cfg):
     cfg.lm.train.cla_dropout = 0.4
     # Whether or not to use the gpt responses (i.e., explanation and prediction) as text input
     # If not, use the original text attributes (i.e., title and abstract)
-    cfg.lm.train.use_gpt = False
+    cfg.lm.train.use_gpt = True
 
     # ------------------------------------------------------------------------ #
     # Add handling for missing 1-shot, 3-shot, and 5-shot values
