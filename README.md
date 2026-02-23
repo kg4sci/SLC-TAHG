@@ -1,10 +1,9 @@
 # SLC-TAHG: Benchmarking Few-Shot Cascade Reasoning on Text-Attributed Hyper-Relational Graphs
 ## 1.Download SLC-TAHG
 We have uploaded the models and the proposed SLC-TAHG to Huggingface.
-| Huggingface Address | Description |
+| SLC-TAHG Address | Description |
 | ---- | ---- |
-|  |    |
-|  |    |
+| https://www.scidb.cn/en/detail?dataSetId=d2461f91de8c49e5b545241119d41f1c |  Download all data files and save them to the corresponding folder of the code to run ！ |
 
 ## 2. Environment Preparation
 Please first clone the repo and install the required environment, which can be done by running the following.
