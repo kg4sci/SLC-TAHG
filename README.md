@@ -3,7 +3,7 @@
 SLC-TAHG is an evidence-traceable, text-attributed hyper-relational graph benchmark for evaluating cascade reasoning over SLC-centered biomedical mechanisms, models SLC-related biomedical mechanisms as event-centric hyper-relational cascades.
 
 <p align="center">
-  <img src="KG Schema.png" width="720">
+  <img src="KG Schema.png" width="620">
 </p>
 
 Each RelaEvent connects an SLC gene, a biological pathway, and a disease outcome, together with relation polarity labels and supporting evidence.
@@ -112,7 +112,6 @@ python -m graphgpt.gr.eval_gran_cascading \
 
 The corresponding `model_output_file` and `save_path` can be modified as needed.
 
----
 
 ### 6.2 TAPE Model
 
@@ -131,7 +130,6 @@ pip install -r requirements_tape.txt
 bash tape/models/run.sh
 ```
 
----
 
 ### 6.3 Other Models
 
@@ -174,11 +172,3 @@ Main metrics include:
 * AB Accuracy / AB F1;
 * BC Accuracy / BC F1;
 * class-specific recall for promotion and suppression.
-
-* The optimal hyperparameters for graph-based models are stored in `Best_modelPara/`.
-* The LLM-processed text data is already provided in `Eval_module/data`.
-* Neo4j is required for graph-based data access.
-* MongoDB metadata is optional depending on whether additional raw metadata access is needed.
-
-```
-```
