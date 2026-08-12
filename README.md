@@ -55,22 +55,8 @@ CaRe is a structure-aware cascade model designed to address the gap between loca
 3. **Conditional two-stage decoding:** the BC decoder conditions on the predicted AB relation and the shared event representation.
 
 <p align="center">
-  <img src="CaRe1.png" width="620" alt="CaRe model structure">
+  <img src="CaRe1.png" width="450" alt="CaRe model structure">
 </p>
-### CaRe Results
-
-| Dataset | Model | Path-Acc | Path-F1 | AB-F1 | BC-F1 |
-| --- | --- | ---: | ---: | ---: | ---: |
-| SLC-TAHG | GRAN (original) | 0.5564 | 0.7150 | 0.7024 | 0.7066 |
-| SLC-TAHG | CaRe | **0.7557** | **0.8609** | **0.7936** | **0.8400** |
-| ElectroCat-KG | GRAN (original) | 0.3119 | 0.4755 | 0.2736 | 0.2530 |
-| ElectroCat-KG | CaRe | **0.3663** | **0.5362** | **0.4250** | **0.3781** |
-| WD50K | GRAN (original) | 0.6153 | 0.7618 | 0.7330 | 0.6750 |
-| WD50K | CaRe | **0.7100** | **0.8304** | **0.7730** | **0.7256** |
-
-On SLC-TAHG, CaRe improves Path-Acc by **7.25 percentage points** over the strongest benchmark baseline in the unified comparison. Relative to GRAN (original), it improves Path-Acc by **5.44 points** on ElectroCat-KG and **9.47 points** on WD50K.
-
-Ablations show consistent Path-Acc drops after removing either Text Attribute Encoding or RelEventFusion across all three datasets. Reported values are point estimates; variance and significance statistics were not available for these model comparisons.
 
 ## Download
 
