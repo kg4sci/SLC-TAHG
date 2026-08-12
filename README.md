@@ -8,7 +8,7 @@ Instead of predicting isolated links, the benchmark asks whether a model can rec
 SLCGene --relAB--> Pathway --relBC--> Disease
 ```
 
-Both `relAB` and `relBC` are classified as `promotion` or `suppression`. A path is correct only when **both stages are predicted correctly for the same RelaEvent**.
+Both `relAB` and `relBC` are classified as `promotion` or `suppression`. A path is correct only when both stages are predicted correctly for the same RelaEvent.
 
 <p align="center">
   <img src="KG Schema.png" width="620" alt="SLC-TAHG event-centric graph schema">
@@ -37,22 +37,6 @@ Both `relAB` and `relBC` are classified as `promotion` or `suppression`. A path 
 | Primary task | Two-stage constrained relation classification |
 | Evaluation settings | Full-data, attribute ablation, and few-shot learning |
 
-### Label Distribution
-
-| Stage | Promotion | Suppression |
-| --- | ---: | ---: |
-| AB: SLCGene -> Pathway | 536 (61.3%) | 339 (38.7%) |
-| BC: Pathway -> Disease | 520 (59.4%) | 355 (40.6%) |
-
-| Cascade composition | Paths | Share |
-| --- | ---: | ---: |
-| Promotion -> Promotion | 402 | 45.9% |
-| Promotion -> Suppression | 134 | 15.3% |
-| Suppression -> Promotion | 118 | 13.5% |
-| Suppression -> Suppression | 221 | 25.3% |
-
-Because **28.8% of paths change polarity between stages**, the downstream label cannot be recovered by simply copying the upstream prediction.
-
 ## Metrics
 
 - **AB Accuracy / Macro-F1:** upstream `SLCGene -> Pathway` prediction.
@@ -70,8 +54,9 @@ CaRe is a structure-aware cascade model designed to address the gap between loca
 2. **Relation-aligned text injection:** AB and BC evidence are encoded separately and injected into their event representations through gated residual updates.
 3. **Conditional two-stage decoding:** the BC decoder conditions on the predicted AB relation and the shared event representation.
 
-`RelEventFusion` builds a structural path query and applies cross-attention over token-level AB/BC evidence. During training, scheduled teacher forcing gradually changes the upstream input from the gold relation to a Gumbel-Softmax prediction. A direct residual BC head reduces over-dependence on potentially incorrect upstream predictions.
-
+<p align="center">
+  <img src="CaRe1.png" width="620" alt="CaRe model structure">
+</p>
 ### CaRe Results
 
 | Dataset | Model | Path-Acc | Path-F1 | AB-F1 | BC-F1 |
