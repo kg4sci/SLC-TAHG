@@ -1,150 +1,152 @@
 # SLC-TAHG: Benchmarking LLM Structural Reasoning on Text-Attributed Hyper-Relational Cascades
 
-SLC-TAHG is an evidence-traceable, text-attributed hyper-relational graph benchmark for evaluating cascade reasoning over SLC-centered biomedical mechanisms, models SLC-related biomedical mechanisms as event-centric hyper-relational cascades.
+SLC-TAHG is an evidence-traceable benchmark for evaluating **few-shot, event-conditioned cascade reasoning** over text-attributed hyper-relational graphs.
 
-<p align="center">
-  <img src="KG Schema.png" width="620">
-</p>
-
-Each RelaEvent connects an SLC gene, a biological pathway, and a disease outcome, together with relation polarity labels and supporting evidence.
+Instead of predicting isolated links, the benchmark asks whether a model can recover an entire biomedical cascade under a shared event context:
 
 ```text
 SLCGene --relAB--> Pathway --relBC--> Disease
-````
-where both `relAB` and `relBC` are labeled as `promotion` or `suppression`.
+```
 
----
+Both `relAB` and `relBC` are classified as `promotion` or `suppression`. A path is correct only when **both stages are predicted correctly for the same RelaEvent**.
 
-## 1. Dataset Statistics
+<p align="center">
+  <img src="KG Schema.png" width="620" alt="SLC-TAHG event-centric graph schema">
+</p>
 
-| Item               | Count / Description                     |
-| ------------------ | --------------------------------------- |
-| Nodes              | 2,777                                   |
-| Edges              | 4,473                                   |
-| Node types         | 8                                       |
-| Core cascade       | SLCGene → Pathway → Disease             |
-| Relation labels    | promotion / suppression                 |
-| Text attributes    | Evidence text linked to RelaEvent nodes |
-| Task               | Two-stage cascade relation prediction   |
-| Evaluation setting | Full-data and few-shot learning         |
+## Highlights
 
----
+- **Event-centric representation:** a `RelaEvent` binds an SLC gene, pathway, disease, two relation labels, contextual attributes, and relation-aligned evidence.
+- **Traceable biomedical evidence:** each target relation is linked to sentence-level PubMed evidence rather than generated supervision.
+- **Path-level evaluation:** the benchmark separates local edge correctness from jointly correct cascade recovery.
+- **Unified model comparison:** relational GNNs, hyper-relational models, tensor factorization, text-only encoders, prompted LLMs, and graph-augmented LMs are evaluated under controlled candidate labels and evidence access.
+- **CaRe:** a structure-aware cascade model that explicitly represents the shared event and the ordered `AB -> BC` dependency.
 
-## 2. Download SLC-TAHG
 
-We have uploaded the proposed SLC-TAHG dataset and related files to the following address.
+## Dataset Statistics
 
-| SLC-TAHG Address                                                                                                                                       | Description                                                                                    |
-| ------------------------------------------------------------------------------------------------------------------------------------------------------ | ---------------------------------------------------------------------------------------------- |
-| [https://www.scidb.cn/en/detail?dataSetId=d2461f91de8c49e5b545241119d41f1c](https://www.scidb.cn/en/detail?dataSetId=d2461f91de8c49e5b545241119d41f1c) | Download all data files and place them into the corresponding folders before running the code. |
+| Item | Count / Description |
+| --- | --- |
+| Nodes | 2,777 |
+| Edges | 4,473 |
+| Node types | 8 |
+| Event-conditioned paths | 875 |
+| Core cascade | SLCGene -> Pathway -> Disease |
+| Relation labels | promotion / suppression |
+| Text attributes | Relation-aligned, sentence-level evidence |
+| Primary task | Two-stage constrained relation classification |
+| Evaluation settings | Full-data, attribute ablation, and few-shot learning |
 
----
+### Label Distribution
 
-## 3. Environment Preparation
+| Stage | Promotion | Suppression |
+| --- | ---: | ---: |
+| AB: SLCGene -> Pathway | 536 (61.3%) | 339 (38.7%) |
+| BC: Pathway -> Disease | 520 (59.4%) | 355 (40.6%) |
 
-Please first clone the repository and install the required environment.
+| Cascade composition | Paths | Share |
+| --- | ---: | ---: |
+| Promotion -> Promotion | 402 | 45.9% |
+| Promotion -> Suppression | 134 | 15.3% |
+| Suppression -> Promotion | 118 | 13.5% |
+| Suppression -> Suppression | 221 | 25.3% |
+
+Because **28.8% of paths change polarity between stages**, the downstream label cannot be recovered by simply copying the upstream prediction.
+
+## Metrics
+
+- **AB Accuracy / Macro-F1:** upstream `SLCGene -> Pathway` prediction.
+- **BC Accuracy / Macro-F1:** downstream `Pathway -> Disease` prediction.
+- **Path Accuracy:** fraction of paths for which both AB and BC are correct; this is the primary metric.
+- **Path F1:** F1 of the jointly correct `TT` class under the released four-way path-error encoding (`TT`, `TF`, `FT`, `FF`).
+
+An unparseable generative output is counted as `FF` for path-level evaluation.
+
+## CaRe
+
+CaRe is a structure-aware cascade model designed to address the gap between local relation prediction and complete-path reliability. It contains three main components:
+
+1. **Stage-specific structural encoding:** independent AB and BC graph streams preserve the distinct roles of the two relations.
+2. **Relation-aligned text injection:** AB and BC evidence are encoded separately and injected into their event representations through gated residual updates.
+3. **Conditional two-stage decoding:** the BC decoder conditions on the predicted AB relation and the shared event representation.
+
+`RelEventFusion` builds a structural path query and applies cross-attention over token-level AB/BC evidence. During training, scheduled teacher forcing gradually changes the upstream input from the gold relation to a Gumbel-Softmax prediction. A direct residual BC head reduces over-dependence on potentially incorrect upstream predictions.
+
+### CaRe Results
+
+| Dataset | Model | Path-Acc | Path-F1 | AB-F1 | BC-F1 |
+| --- | --- | ---: | ---: | ---: | ---: |
+| SLC-TAHG | GRAN (original) | 0.5564 | 0.7150 | 0.7024 | 0.7066 |
+| SLC-TAHG | CaRe | **0.7557** | **0.8609** | **0.7936** | **0.8400** |
+| ElectroCat-KG | GRAN (original) | 0.3119 | 0.4755 | 0.2736 | 0.2530 |
+| ElectroCat-KG | CaRe | **0.3663** | **0.5362** | **0.4250** | **0.3781** |
+| WD50K | GRAN (original) | 0.6153 | 0.7618 | 0.7330 | 0.6750 |
+| WD50K | CaRe | **0.7100** | **0.8304** | **0.7730** | **0.7256** |
+
+On SLC-TAHG, CaRe improves Path-Acc by **7.25 percentage points** over the strongest benchmark baseline in the unified comparison. Relative to GRAN (original), it improves Path-Acc by **5.44 points** on ElectroCat-KG and **9.47 points** on WD50K.
+
+Ablations show consistent Path-Acc drops after removing either Text Attribute Encoding or RelEventFusion across all three datasets. Reported values are point estimates; variance and significance statistics were not available for these model comparisons.
+
+## Download
+
+Download the dataset and related files from Science Data Bank:
+
+[https://www.scidb.cn/en/detail?dataSetId=d2461f91de8c49e5b545241119d41f1c](https://www.scidb.cn/en/detail?dataSetId=d2461f91de8c49e5b545241119d41f1c)
+
+Place the downloaded files in their corresponding repository directories before running the code.
+
+## Installation
 
 ```bash
 git clone https://github.com/kg4sci/SLC-TAHG.git
 cd SLC-TAHG
 ```
 
-Different baseline families require different environments, as described below.
+Different baseline families use separate environments because of dependency conflicts.
 
----
-
-## 4. Dataset Configuration
-
-You need to download the corresponding Neo4j data. Whether to download the MongoDB metadata depends on your needs. The text data processed by the LLM from MongoDB is already stored in the `Eval_module/data` folder.
-
-Please modify the following configuration according to your local environment:
-
-```python
-NEO4J_URI = "bolt://xxx"      # Replace with your Neo4j URI
-NEO4J_USER = "xxx"
-NEO4J_PASSWORD = "xxx"
-
-MONGO_URI = "mongodb://xxx"   # Optional, depending on your usage
-```
-
----
-
-## 5. Hyperparameter Tuning
-
-For graph-based evaluation models, we use Optuna for 200 iterations of hyperparameter tuning. The optimal parameters for each model are stored in `Best_modelPara/`, and these parameters are used to run the corresponding model and obtain evaluation metrics.
-
-Example:
+### Graph and Tensor Baselines
 
 ```bash
-python optuna_hyperparameter_tuning.py --model GRAN --n_trials 200
+conda create -n slctahg python=3.10
+conda activate slctahg
+pip install -r requirements.txt
 ```
 
----
-
-## 6. Running Baselines
-
-### 6.1 GraphGPT Model
-
-#### Environment
+### GraphGPT
 
 ```bash
-cd Eval_module
-conda create --name graphgpt python==3.9
+conda create -n graphgpt python=3.9
 conda activate graphgpt
 pip install -r requirements_graphgpt.txt
 ```
 
-#### Run
+### TAPE
 
 ```bash
-bash graphgpt/gr/run_stage1.sh
-bash graphgpt/gr/train_gran_stage2.sh
-bash graphgpt/gr/eval_gran.sh
-```
-
-#### Cascading Evaluation
-
-```bash
-python -m graphgpt.gr.eval_gran_cascading \
-  --model_output_file ./graphgpt/gr/graphgpt/eval/arxiv_test_res_all.json \
-  --save_path ./graphgpt/gr/graphgpt/eval/arxiv_test_res_all_metrics.json
-```
-
-The corresponding `model_output_file` and `save_path` can be modified as needed.
-
-
-### 6.2 TAPE Model
-
-#### Environment
-
-```bash
-cd Eval_module
-conda create --name TAPE python==3.8
-conda activate TAPE
+conda create -n tape python=3.8
+conda activate tape
 pip install -r requirements_tape.txt
 ```
 
-#### Run
+## Data Configuration
 
-```bash
-bash tape/models/run.sh
+Download and import the released Neo4j data before running graph-based experiments. MongoDB metadata is optional because the processed text used by the evaluation code is already available under `Eval_module/data`.
+
+Configure local database access where required:
+
+```python
+NEO4J_URI = "bolt://localhost:7687"
+NEO4J_USER = "neo4j"
+NEO4J_PASSWORD = "your-password"
+
+MONGO_URI = "mongodb://localhost:27017"  # optional
 ```
 
+Do not commit credentials to the repository. Environment variables or an ignored local configuration file are recommended.
 
-### 6.3 Other Models
+## Running the Released Baselines
 
-This environment is used for models such as GRAN, RGCN, N-ComplEx, and other graph-based baselines.
-
-#### Environment
-
-```bash
-cd Eval_module
-conda create --name slcdb python==3.10
-conda activate slcdb
-pip install -r requirements.txt
-```
-
-#### Run
+### Graph and Tensor Models
 
 ```bash
 # GRAN
@@ -157,18 +159,48 @@ python -m Eval_module.RGCN.RGCN
 python -m Eval_module.NComplEx.NComplEx
 ```
 
-For the remaining models, please run the corresponding executable files in their respective model folders.
+Other structural baselines can be run from their corresponding directories under `Eval_module/`.
 
----
+### GraphGPT
 
-## 7. Evaluation Metrics
+```bash
+cd Eval_module
+bash graphgpt/gr/run_stage1.sh
+bash graphgpt/gr/train_gran_stage2.sh
+bash graphgpt/gr/eval_gran.sh
+```
 
-SLC-TAHG reports both path-level and edge-level metrics.
+Cascade evaluation:
 
-Main metrics include:
+```bash
+python -m graphgpt.gr.eval_gran_cascading \
+  --model_output_file ./graphgpt/gr/graphgpt/eval/arxiv_test_res_all.json \
+  --save_path ./graphgpt/gr/graphgpt/eval/arxiv_test_res_all_metrics.json
+```
 
-* Path Accuracy;
-* Path F1;
-* AB Accuracy / AB F1;
-* BC Accuracy / BC F1;
-* class-specific recall for promotion and suppression.
+### TAPE
+
+```bash
+cd Eval_module
+bash tape/models/run.sh
+```
+
+## Hyperparameter Search
+
+Graph-based baselines use Optuna with up to 200 trials. Selected configurations are stored in `Best_modelPara/`.
+
+```bash
+python optuna_hyperparameter_tuning.py --model GRAN --n_trials 200
+```
+
+Hyperparameter selection must be performed without accessing the corresponding test fold.
+
+## Repository Scope
+
+The current public repository contains the SLC-TAHG dataset interface, benchmark protocol, evaluation code, and released baseline implementations. The latest manuscript also reports CaRe and cross-domain experiments on ElectroCat-KG and WD50K; add the corresponding training commands here when those implementations and processed datasets are released rather than documenting unverified paths.
+
+For the detailed benchmark contract, see [`BENCHMARK_USAGE_PROTOCOL.md`](BENCHMARK_USAGE_PROTOCOL.md).
+
+## License
+
+The code in this repository is released under the [MIT License](LICENSE). Dataset users should also follow the terms specified on the Science Data Bank download page and the applicable terms of the original biomedical sources.
