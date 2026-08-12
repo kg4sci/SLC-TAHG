@@ -1,4 +1,4 @@
-# SLC-TAHG: enchmarking LLM Structural Reasoning on Text-Attributed Hyper-Relational Cascades
+# SLC-TAHG: Benchmarking LLM Structural Reasoning on Text-Attributed Hyper-Relational Cascades
 
 SLC-TAHG is an evidence-traceable, text-attributed hyper-relational graph benchmark for evaluating cascade reasoning over SLC-centered biomedical mechanisms, models SLC-related biomedical mechanisms as event-centric hyper-relational cascades.
 
